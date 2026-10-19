@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://hd0ikgdhbkvo"]
+
+[ext_resource type="Shader" uid="uid://bki83ockynk30" path="res://shaders/rune-wall.gdshader" id="1_uncxm"]
+[ext_resource type="Texture2D" uid="uid://704wcl14uinu" path="res://textures/rune-wall.png" id="2_1pmxw"]
+
+[resource]
+shader = ExtResource("1_uncxm")
+shader_parameter/runes = ExtResource("2_1pmxw")
+shader_parameter/screen_space = true
+shader_parameter/size = Vector2(0, 0)
+shader_parameter/runes_color = Color(0.57, 0.57, 0.57, 1)
+shader_parameter/background_color = Color(1, 1, 1, 0.011764706)
+shader_parameter/scale = 4.0
+shader_parameter/movement = Vector2(0.005, 0.04)
+shader_parameter/lod = 1.3

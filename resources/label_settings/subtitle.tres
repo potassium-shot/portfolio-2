@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://b6iiw1dikh1at"]
+
+[ext_resource type="FontFile" uid="uid://5b8paqnuiuam" path="res://resources/fonts/Cinzel/static/Cinzel-Medium.ttf" id="1_qi5g8"]
+
+[resource]
+font = ExtResource("1_qi5g8")
+font_size = 18
