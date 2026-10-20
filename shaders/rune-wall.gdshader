@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform sampler2D runes: repeat_enable, filter_linear_mipmap;
 uniform bool screen_space = true;
+uniform vec2 offset;
 uniform vec2 size;
 uniform vec4 runes_color: source_color;
 uniform vec4 background_color: source_color;
@@ -19,7 +20,7 @@ void fragment() {
         uv = UV * size * scale;
     }
 
-	vec4 runes_final = textureLod(runes, uv + movement * TIME, lod) * runes_color;
+	vec4 runes_final = textureLod(runes, uv + movement * TIME + offset, lod) * runes_color;
 
 	runes_final = mix(background_color, runes_final, runes_final.a);
 

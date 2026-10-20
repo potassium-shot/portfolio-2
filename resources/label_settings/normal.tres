@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://clees60u27p6e"]
+
+[ext_resource type="FontFile" uid="uid://dumhyne23y3a4" path="res://resources/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf" id="1_d3tua"]
+
+[resource]
+font = ExtResource("1_d3tua")
+font_size = 20

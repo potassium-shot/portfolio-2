@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bek62m4g8yboc"]
+
+[ext_resource type="FontFile" uid="uid://b55ikng5t8ydr" path="res://resources/fonts/Cinzel/static/Cinzel-Regular.ttf" id="1_ols5k"]
+
+[resource]
+LinkButton/colors/font_pressed_color = Color(0.5914361, 1.4862548, 0.97919095, 1)
+LinkButton/fonts/font = ExtResource("1_ols5k")

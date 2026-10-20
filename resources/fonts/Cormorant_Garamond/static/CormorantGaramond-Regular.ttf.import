@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c3pmpy08qi65m"
-path="res://.godot/imported/Cinzel-Black.ttf-923c41ef0dd3a762a55a0ad75eee99bc.fontdata"
+uid="uid://dumhyne23y3a4"
+path="res://.godot/imported/CormorantGaramond-Regular.ttf-0489139f2bfaaf76f433588e907fce39.fontdata"
 
 [deps]
 
-source_file="res://resources/fonts/Cinzel/static/Cinzel-Black.ttf"
-dest_files=["res://.godot/imported/Cinzel-Black.ttf-923c41ef0dd3a762a55a0ad75eee99bc.fontdata"]
+source_file="res://resources/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf"
+dest_files=["res://.godot/imported/CormorantGaramond-Regular.ttf-0489139f2bfaaf76f433588e907fce39.fontdata"]
 
 [params]
 

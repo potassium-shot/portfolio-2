@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cf6kyaftmp07q"]
 
+[ext_resource type="Script" uid="uid://cgfuogxh67pc4" path="res://scripts/root.gd" id="1_dylgi"]
 [ext_resource type="Material" uid="uid://hd0ikgdhbkvo" path="res://resources/materials/rune-wall-large.tres" id="1_twpsu"]
 [ext_resource type="Texture2D" uid="uid://cqaun80ygmhmi" path="res://textures/borders.png" id="3_lrqlo"]
 [ext_resource type="Texture2D" uid="uid://c4mvhfmuu5muu" path="res://textures/separator.svg" id="3_sqa0i"]
@@ -9,13 +10,32 @@
 [ext_resource type="Shader" uid="uid://bki83ockynk30" path="res://shaders/rune-wall.gdshader" id="5_j287u"]
 [ext_resource type="Texture2D" uid="uid://704wcl14uinu" path="res://textures/rune-wall.png" id="6_5sfjl"]
 [ext_resource type="LabelSettings" uid="uid://b6iiw1dikh1at" path="res://resources/label_settings/subtitle.tres" id="6_7pvxh"]
-[ext_resource type="Script" uid="uid://dwoox4mbpe8j5" path="res://scripts/utils/shader_set_size.gd" id="7_5sfjl"]
+[ext_resource type="PackedScene" uid="uid://c7e0kqjiujgv4" path="res://scenes/ui/separator.tscn" id="7_5sfjl"]
+[ext_resource type="LabelSettings" uid="uid://clees60u27p6e" path="res://resources/label_settings/normal.tres" id="8_3hfy5"]
+[ext_resource type="Script" uid="uid://q5tlqec4qftd" path="res://scripts/lang_container.gd" id="10_l5cgh"]
+[ext_resource type="Texture2D" uid="uid://bra471hb4xcbi" path="res://textures/dot.svg" id="12_l5cgh"]
+[ext_resource type="PackedScene" uid="uid://4gnvfrpo826p" path="res://scenes/cursor.tscn" id="13_vgks2"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kycxp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y3xxt"]
 shader = ExtResource("5_j287u")
 shader_parameter/runes = ExtResource("6_5sfjl")
 shader_parameter/screen_space = false
-shader_parameter/size = Vector2(948, 16)
+shader_parameter/offset = Vector2(0, -0.003)
+shader_parameter/size = Vector2(928, 16)
+shader_parameter/runes_color = Color(1, 1, 1, 1)
+shader_parameter/background_color = Color(1, 1, 1, 0.03529412)
+shader_parameter/scale = 0.004
+shader_parameter/movement = Vector2(0.05, 0)
+shader_parameter/lod = 2.5
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_w7kf4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hfy5"]
+shader = ExtResource("5_j287u")
+shader_parameter/runes = ExtResource("6_5sfjl")
+shader_parameter/screen_space = false
+shader_parameter/offset = Vector2(0, 0.173)
+shader_parameter/size = Vector2(928, 16)
 shader_parameter/runes_color = Color(1, 1, 1, 1)
 shader_parameter/background_color = Color(1, 1, 1, 0.03529412)
 shader_parameter/scale = 0.004
@@ -31,6 +51,7 @@ shader_parameter/crt_blink_speed = 6.0
 shader_parameter/crt_blink_min_brightness = 0.7
 
 [node name="Root" type="Node" unique_id=1040543170]
+script = ExtResource("1_dylgi")
 
 [node name="UI" type="Control" parent="." unique_id=1533640588]
 layout_mode = 3
@@ -40,7 +61,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=715577749]
+[node name="UIContents" type="Control" parent="UI" unique_id=525814039]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/UIContents" unique_id=715577749]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,10 +81,10 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = -40
 theme_override_constants/margin_bottom = 25
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer" unique_id=589562264]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContents/MarginContainer" unique_id=589562264]
 layout_mode = 2
 
-[node name="RunesLeft" type="NinePatchRect" parent="UI/MarginContainer/HBoxContainer" unique_id=2037918454]
+[node name="RunesLeft" type="NinePatchRect" parent="UI/UIContents/MarginContainer/HBoxContainer" unique_id=2037918454]
 material = ExtResource("1_twpsu")
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
@@ -67,31 +96,33 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="SeparatorLeft" type="TextureRect" parent="UI/MarginContainer/HBoxContainer" unique_id=408838633]
+[node name="SeparatorLeft" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer" unique_id=408838633]
 layout_mode = 2
 texture = ExtResource("3_sqa0i")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/HBoxContainer" unique_id=2007963440]
+[node name="MarginContainer" type="MarginContainer" parent="UI/UIContents/MarginContainer/HBoxContainer" unique_id=2007963440]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/MarginContainer/HBoxContainer/MarginContainer" unique_id=1347017589]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer" unique_id=1347017589]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Contents" type="VBoxContainer" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1699524652]
+[node name="Contents" type="VBoxContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1699524652]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TitleCard" type="HBoxContainer" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1352875716]
+[node name="TitleCard" type="HBoxContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1352875716]
 layout_mode = 2
 alignment = 1
 
-[node name="LineLeft" type="TextureRect" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=54748985]
+[node name="LineLeft" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=54748985]
 custom_minimum_size = Vector2(64, 0)
 custom_maximum_size = Vector2(256, -1)
 layout_mode = 2
@@ -100,37 +131,36 @@ texture = ExtResource("4_3hfy5")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SpacerLeft" type="Control" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1035371657]
+[node name="SpacerLeft" type="Control" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1035371657]
 custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1030579431]
+[node name="TitleTexts" type="VBoxContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1030579431]
 custom_minimum_size = Vector2(0, 78.975)
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="Title" type="Label" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard/VBoxContainer" unique_id=1762701456]
+[node name="Title" type="Label" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard/TitleTexts" unique_id=1762701456]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Potassium Shot"
+text = "main.title"
 label_settings = ExtResource("4_jh1ax")
 horizontal_alignment = 1
 minimum_font_size = 22
 maximum_font_size = 36
 
-[node name="Subtitle" type="Label" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard/VBoxContainer" unique_id=1561377193]
+[node name="Subtitle" type="Label" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard/TitleTexts" unique_id=1561377193]
 layout_mode = 2
-text = "Projects"
+text = "main.subtitle"
 label_settings = ExtResource("6_7pvxh")
 horizontal_alignment = 1
 minimum_font_size = 12
 maximum_font_size = 18
 
-[node name="SpacerRight" type="Control" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1657967954]
+[node name="SpacerRight" type="Control" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1657967954]
 custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 
-[node name="LineRight" type="TextureRect" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1153823770]
+[node name="LineRight" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/TitleCard" unique_id=1153823770]
 custom_minimum_size = Vector2(64, 0)
 custom_maximum_size = Vector2(256, -1)
 layout_mode = 2
@@ -140,25 +170,97 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="Spacer" type="Control" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1370845599]
+[node name="Spacer" type="Control" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1370845599]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="Separator" type="TextureRect" parent="UI/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=913020947]
-material = SubResource("ShaderMaterial_kycxp")
-custom_minimum_size = Vector2(0, 16)
+[node name="Separator" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1119732745 instance=ExtResource("7_5sfjl")]
+material = SubResource("ShaderMaterial_y3xxt")
 layout_mode = 2
-texture = ExtResource("3_lrqlo")
-expand_mode = 1
-script = ExtResource("7_5sfjl")
 
-[node name="SeparatorRight" type="TextureRect" parent="UI/MarginContainer/HBoxContainer" unique_id=2063832197]
+[node name="LangContainer" type="HBoxContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1756894442]
+layout_mode = 2
+alignment = 1
+script = ExtResource("10_l5cgh")
+
+[node name="Label" type="Label" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/LangContainer" unique_id=1312236899]
+layout_mode = 2
+text = "Language: "
+label_settings = ExtResource("6_7pvxh")
+
+[node name="En" type="LinkButton" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/LangContainer" unique_id=1808675919]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_w7kf4")
+text = "en"
+
+[node name="Fr" type="LinkButton" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/LangContainer" unique_id=773054917]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_w7kf4")
+text = "fr"
+
+[node name="WelcomeMessage" type="Label" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1152249125]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "main.welcome-message"
+label_settings = ExtResource("8_3hfy5")
+autowrap_mode = 3
+
+[node name="Spacer3" type="Control" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=266506202]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="Separator2" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=406146356 instance=ExtResource("7_5sfjl")]
+material = SubResource("ShaderMaterial_3hfy5")
+layout_mode = 2
+
+[node name="Spacer4" type="Control" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=2106488072]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="ProjectsAndWorkList" type="HBoxContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents" unique_id=1377563478]
+layout_mode = 2
+alignment = 1
+
+[node name="Work" type="VBoxContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList" unique_id=226606014]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WorkTitle" type="Label" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList/Work" unique_id=349409552]
+layout_mode = 2
+text = "main.work.title"
+label_settings = ExtResource("6_7pvxh")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList/Work" unique_id=1565882341]
+layout_mode = 2
+
+[node name="Separator" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList" unique_id=1202482625]
+self_modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(21.333, 0)
+layout_mode = 2
+texture = ExtResource("12_l5cgh")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Projects" type="VBoxContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList" unique_id=680339148]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProjectsTitle" type="Label" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList/Projects" unique_id=237152578]
+layout_mode = 2
+text = "main.projects.title"
+label_settings = ExtResource("6_7pvxh")
+horizontal_alignment = 1
+
+[node name="SeparatorRight" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer" unique_id=2063832197]
 layout_mode = 2
 texture = ExtResource("3_sqa0i")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RunesRight" type="NinePatchRect" parent="UI/MarginContainer/HBoxContainer" unique_id=590700599]
+[node name="RunesRight" type="NinePatchRect" parent="UI/UIContents/MarginContainer/HBoxContainer" unique_id=590700599]
 material = ExtResource("1_twpsu")
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
@@ -170,6 +272,9 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
+[node name="Cursor" parent="UI" unique_id=951097389 instance=ExtResource("13_vgks2")]
+layout_mode = 0
+
 [node name="PP" type="ColorRect" parent="UI" unique_id=1218689298]
 material = SubResource("ShaderMaterial_lrqlo")
 layout_mode = 1
@@ -178,4 +283,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/LangContainer/En" to="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/LangContainer" method="set_en"]
+[connection signal="pressed" from="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/LangContainer/Fr" to="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/LangContainer" method="set_fr"]

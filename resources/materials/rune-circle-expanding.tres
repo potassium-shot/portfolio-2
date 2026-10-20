@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://rp5qb7dcgjvn"]
+
+[ext_resource type="Shader" uid="uid://cb2uqdybayw4r" path="res://shaders/rune-circle.gdshader" id="1_k7jej"]
+[ext_resource type="Texture2D" uid="uid://704wcl14uinu" path="res://textures/rune-wall.png" id="2_w7kf4"]
+
+[resource]
+shader = ExtResource("1_k7jej")
+shader_parameter/runes = ExtResource("2_w7kf4")
+shader_parameter/lod = 2.0
+shader_parameter/scale = 6.0
+shader_parameter/movement = Vector2(0.04, -0.06)
+shader_parameter/min_radius_start = 0.0
+shader_parameter/min_radius_end = 0.1
+shader_parameter/max_radius_start = 0.0
+shader_parameter/max_radius_end = 0.1

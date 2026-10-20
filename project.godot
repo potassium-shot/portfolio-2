@@ -10,21 +10,26 @@ config_version=5
 
 [application]
 
-config/name="Portfolio 2"
+config/name="Potassium Shot's Portfolio"
+config/name_localized={
+"en_US": "Potassium Shot's Portfolio",
+"fr_FR": "Portfolio de Potassium Shot"
+}
 run/main_scene="uid://cf6kyaftmp07q"
 config/features=PackedStringArray("4.8", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="ignore"
+mouse_cursor/custom_image="uid://dxe3ny84lof2v"
 
 [file_customization]
 
 folder_colors={
 "res://addons/": "gray",
 "res://audio/": "purple",
+"res://locale/": "gray",
 "res://resources/": "yellow",
 "res://scenes/": "orange",
 "res://scripts/": "blue",
@@ -35,10 +40,42 @@ folder_colors={
 [gui]
 
 common/auto_focus_strategy=1
+theme/custom="uid://bek62m4g8yboc"
+theme/custom_font="uid://dumhyne23y3a4"
+
+[input]
+
+click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"button_mask": 1,
+"position": Vector2(110, 19),
+"global_position": Vector2(119, 67),
+"factor": 1.0,
+"button_index": 1,
+"canceled": false,
+"pressed": true,
+"double_click": false,
+"script": null
+)]
+}
 
 [input_devices]
 
 joypads/ignore_joypad_on_unfocused_application=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://locale/loc.en_US.translation", "res://locale/loc.fr_FR.translation")
+locale/locale_filter_mode=0
 
 [physics]
 
@@ -49,5 +86,6 @@ joypads/ignore_joypad_on_unfocused_application=true
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+limits/time/time_rollover_secs=2048.0
 lights_and_shadows/multi_bounce_occlusion/enabled=true
 environment/defaults/default_clear_color=Color(0.021434618, 0.02143464, 0.021434633, 1)
