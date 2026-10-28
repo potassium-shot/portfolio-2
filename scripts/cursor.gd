@@ -1,10 +1,24 @@
-extends TextureRect
+class_name Cursor extends TextureRect
 
 
 const CLICK_FX: PackedScene = preload("res://scenes/fx/wave_fx.tscn")
 
 
 @export var highlighted_color: Color
+
+
+var _topmost_counter: int = 0
+var topmost_counter: int:
+	get:
+		return _topmost_counter
+
+	set(value):
+		if value == _topmost_counter:
+			return
+
+		_topmost_counter = value
+
+		z_index = 600 if value > 0 else 100
 
 
 @onready var glow: TextureRect = $Glow

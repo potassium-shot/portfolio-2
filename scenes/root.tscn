@@ -14,6 +14,7 @@
 [ext_resource type="LabelSettings" uid="uid://clees60u27p6e" path="res://resources/label_settings/normal.tres" id="8_3hfy5"]
 [ext_resource type="Script" uid="uid://q5tlqec4qftd" path="res://scripts/lang_container.gd" id="10_l5cgh"]
 [ext_resource type="Texture2D" uid="uid://bra471hb4xcbi" path="res://textures/dot.svg" id="12_l5cgh"]
+[ext_resource type="Script" uid="uid://dmulo5btt173l" path="res://scripts/ui/lazy_texture.gd" id="13_jrhyn"]
 [ext_resource type="PackedScene" uid="uid://4gnvfrpo826p" path="res://scenes/cursor.tscn" id="13_vgks2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y3xxt"]
@@ -233,8 +234,12 @@ text = "main.work.title"
 label_settings = ExtResource("6_7pvxh")
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList/Work" unique_id=1565882341]
+[node name="LazyTexture" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList/Work" unique_id=1802491646]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+stretch_mode = 5
+script = ExtResource("13_jrhyn")
+metadata/_custom_type_script = "uid://dmulo5btt173l"
 
 [node name="Separator" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList" unique_id=1202482625]
 self_modulate = Color(1, 1, 1, 0.5882353)
@@ -253,6 +258,15 @@ layout_mode = 2
 text = "main.projects.title"
 label_settings = ExtResource("6_7pvxh")
 horizontal_alignment = 1
+
+[node name="LazyTexture" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/Contents/ProjectsAndWorkList/Projects" unique_id=1530749013]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+mouse_filter = 0
+stretch_mode = 5
+script = ExtResource("13_jrhyn")
+path = "hyper-balls-03.png"
+metadata/_custom_type_script = "uid://dmulo5btt173l"
 
 [node name="SeparatorRight" type="TextureRect" parent="UI/UIContents/MarginContainer/HBoxContainer" unique_id=2063832197]
 layout_mode = 2
@@ -273,9 +287,11 @@ patch_margin_right = 32
 patch_margin_bottom = 32
 
 [node name="Cursor" parent="UI" unique_id=951097389 instance=ExtResource("13_vgks2")]
+z_index = 100
 layout_mode = 0
 
 [node name="PP" type="ColorRect" parent="UI" unique_id=1218689298]
+z_index = 200
 material = SubResource("ShaderMaterial_lrqlo")
 layout_mode = 1
 anchors_preset = 15

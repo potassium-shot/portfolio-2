@@ -8,6 +8,7 @@ static var instance: Root:
 
 
 @onready var contents: Control = $UI/UIContents
+@onready var cursor: Cursor = $UI/Cursor
 
 
 func _enter_tree() -> void:
