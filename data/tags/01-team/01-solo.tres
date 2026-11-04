@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Tag" format=3 uid="uid://co1bqggjnwlo"]
+
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="1_vbc7q"]
+
+[resource]
+script = ExtResource("1_vbc7q")
+tag_name = "tags.solo.name"
+color = Color(0.9582239, 0.37317052, 0.33361948, 1)
+metadata/_custom_type_script = "uid://7roht50hq4wl"

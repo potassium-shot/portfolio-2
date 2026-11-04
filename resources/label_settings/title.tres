@@ -1,8 +1,8 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://b88almklox5w"]
 
-[ext_resource type="FontFile" uid="uid://5b8paqnuiuam" path="res://resources/fonts/Cinzel/static/Cinzel-Medium.ttf" id="1_8a103"]
+[ext_resource type="FontFile" uid="uid://cotfrw67mj484" path="res://resources/fonts/Cinzel-Bold.ttf" id="1_wj26t"]
 
 [resource]
-font = ExtResource("1_8a103")
-font_size = 36
+font = ExtResource("1_wj26t")
+font_size = 42
 font_color = Color(0.5914361, 1.4862548, 0.9642772, 1)

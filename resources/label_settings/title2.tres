@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c2s2eilgula12"]
+
+[ext_resource type="FontFile" uid="uid://dhbebltd0a773" path="res://resources/fonts/Cinzel-SemiBold.ttf" id="1_2gric"]
+
+[resource]
+font = ExtResource("1_2gric")
+font_size = 28
+font_color = Color(0.5914361, 1.4862548, 0.9642772, 1)

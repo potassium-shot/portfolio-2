@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Tag" format=3 uid="uid://dic3we41080m0"]
+
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="1_ucqmp"]
+
+[resource]
+script = ExtResource("1_ucqmp")
+tag_name = "Unreal"
+color = Color(0.52409595, 0.46742052, 0.98016375, 1)
+metadata/_custom_type_script = "uid://7roht50hq4wl"

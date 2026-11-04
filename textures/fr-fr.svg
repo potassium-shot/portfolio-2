@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   id="svg6800"
+   sodipodi:modified="true"
+   sodipodi:docname="fr-fr.svg"
+   inkscape:export-filename="/Users/miialainen/Documents/Word play/Word Play images/US-UK_Flag.png"
+   viewBox="0 0 380 200"
+   sodipodi:version="0.32"
+   inkscape:export-xdpi="90"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-ydpi="90"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="base"
+     fit-margin-left="0"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="3.1473684"
+     height="200px"
+     borderopacity="1.0"
+     inkscape:current-layer="layer1"
+     inkscape:cx="184.59866"
+     inkscape:cy="90.710703"
+     borderlayer="false"
+     fit-margin-right="0"
+     inkscape:window-maximized="0"
+     showgrid="false"
+     width="380px"
+     inkscape:document-units="px"
+     bordercolor="#666666"
+     inkscape:window-x="0"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:window-y="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1888"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     pagecolor="#ffffff"
+     gridtolerance="10000"
+     inkscape:window-height="1018"
+     showborder="false"
+     fit-margin-top="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050">
+    <inkscape:grid
+       id="grid3830"
+       enabled="true"
+       visible="true"
+       snapvisiblegridlinesonly="true"
+       type="xygrid"
+       empspacing="5"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
+  </sodipodi:namedview>
+  <g
+     id="layer1"
+     inkscape:label="bg_border"
+     inkscape:groupmode="layer"
+     transform="translate(.5 -.5)">
+    <rect
+       style="fill:#cc5f59;fill-opacity:1;stroke:none;stroke-width:14.8626;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:7.93699"
+       id="rect1"
+       width="130.26756"
+       height="200"
+       x="249.23244"
+       y="0.5"
+       ry="0" />
+    <rect
+       style="fill:#6474c1;fill-opacity:1;stroke:none;stroke-width:14.5328;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:7.93699"
+       id="rect2"
+       width="124.54849"
+       height="200"
+       x="-0.5"
+       y="0.5"
+       ry="0" />
+    <rect
+       style="fill:#dddbd2;fill-opacity:1;stroke:none;stroke-width:14.5698;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:7.93699"
+       id="rect3"
+       width="125.18394"
+       height="200"
+       x="124.04849"
+       y="0.50000191"
+       ry="0" />
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:date>2012-02-12T12:07:18</dc:date>
+        <dc:description>English language flag.</dc:description>
+        <dc:source>https://openclipart.org/detail/168121/usuk-flag-by-klainen</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>klainen</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>English</rdf:li>
+            <rdf:li>English language flag</rdf:li>
+            <rdf:li>UK</rdf:li>
+            <rdf:li>US</rdf:li>
+            <rdf:li>flag</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

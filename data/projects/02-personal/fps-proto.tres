@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Project" format=3 uid="uid://d2j43x3pdnmy"]
+
+[ext_resource type="Script" uid="uid://bjrdlpk5no1ry" path="res://scripts/data/project.gd" id="1_unjl6"]
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="2_48kdd"]
+[ext_resource type="Resource" uid="uid://co1bqggjnwlo" path="res://data/tags/01-team/01-solo.tres" id="3_sn6ul"]
+[ext_resource type="Resource" uid="uid://q26t3ctfdl34" path="res://data/tags/02-engines/unity.tres" id="4_4ub1a"]
+[ext_resource type="Resource" uid="uid://bcw13uj7r5v08" path="res://data/tags/03-languages/csharp.tres" id="5_0exk0"]
+
+[resource]
+script = ExtResource("1_unjl6")
+project_name = "projects.fps-proto.name"
+tags = Array[ExtResource("2_48kdd")]([ExtResource("3_sn6ul"), ExtResource("4_4ub1a"), ExtResource("5_0exk0")])
+order = 50
+images = Array[String](["fps-proto-01.png", "fps-proto-02.png", "fps-proto-03.png"])
+metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

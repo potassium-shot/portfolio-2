@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://decbixwh27c75"]
+
+[ext_resource type="LabelSettings" uid="uid://b88almklox5w" path="res://resources/label_settings/title.tres" id="1_pr8sr"]
+[ext_resource type="Script" uid="uid://1iffwe7mw238" path="res://scripts/ui/project_page.gd" id="1_rtky1"]
+
+[node name="ProjectPage" type="VBoxContainer" unique_id=773839621]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 57.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_rtky1")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=796645853]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Project"
+label_settings = ExtResource("1_pr8sr")
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=299693337]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=127046539]
+layout_mode = 2
+
+[node name="Galery" type="VBoxContainer" parent="HBoxContainer" unique_id=415671457]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Contents" type="VBoxContainer" parent="HBoxContainer" unique_id=1601715529]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+
+[connection signal="pressed" from="BackButton" to="." method="_go_back"]

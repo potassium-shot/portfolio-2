@@ -1,6 +1,14 @@
 ﻿keys,en_US,fr_FR
 main.title,Potassium Shot,Potassium Shot
 main.subtitle,Projects,Projets
-main.welcome-message,Me when I defecate in my boss' shoe.,Moi quand je défèque dans la chaussure de mon patron.
+main.welcome-message,"Hello, my name is Toni Zana, I make games, engines and little programs as both a hobby and a job. With several projects on both itch.io and github [todo put a link], I am coming out of 5 years of studies at Isart Digital (as a gameplay programmer), as well as a 2 year apprenticeship at Dada! Animation [todo put a link again]. I like working in small teams, and what thrills me the most is working on programming architecture and complex systems.","Bonjour, je suis Toni Zana, je fais des jeux, des moteurs et des petits programmes, pour la passion et comme métier. Avec plusieurs projets à mon nom sur itch.io et github [todo mettre un lien]], je sors de 5 ans d'études à Isart Digital (en programmation gameplay), et de 2 ans d'alternance à Dada! Animation [todo mettre un lien encore]. J'aime travailler en petite équipe, et ce qui me passionne le plus c'est l'archicture de code ainsi que les systèmes complexes."
 main.work.title,Experience,Experience
 main.projects.title,Projects,Projets
+main.tag-selector.title,Open Tag Filters,Filtrer les Tags
+tags.solo.name,Solo,Solo
+tags.small-team.name,2-5 People,2-5 Personnes
+tags.large-team.name,>5 People,>5 Personnes
+projects.fps-proto.name,FPS Prototype,Prototype de FPS
+projects.dada.name,Tool Developer at Dada! Animation,Développeur Outils à Dada! Animation
+projects.holodia.name,Gameplay Programmer at Holodia,Programmeur Gameplay à Holodia
+projects.dialog-tool.name,Dialog Tool for Unreal,Éditeur de Dialogue pour Unreal

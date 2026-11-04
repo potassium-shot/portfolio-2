@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Tag" format=3 uid="uid://jotsx57mm6jv"]
+
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="1_4j2s2"]
+
+[resource]
+script = ExtResource("1_4j2s2")
+tag_name = "C++"
+color = Color(0.504233, 0.8235017, 0.4342371, 1)
+metadata/_custom_type_script = "uid://7roht50hq4wl"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Project" format=3 uid="uid://p2o5ubiyeku1"]
+
+[ext_resource type="Script" uid="uid://bjrdlpk5no1ry" path="res://scripts/data/project.gd" id="1_d1g65"]
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="2_u26lj"]
+[ext_resource type="Resource" uid="uid://djponvxeccoy8" path="res://data/tags/02-engines/godot.tres" id="3_73s5f"]
+[ext_resource type="Resource" uid="uid://co1bqggjnwlo" path="res://data/tags/01-team/01-solo.tres" id="3_lkebk"]
+[ext_resource type="Resource" uid="uid://ci3ii0aopqahc" path="res://data/tags/03-languages/gdscript.tres" id="4_lkebk"]
+
+[resource]
+script = ExtResource("1_d1g65")
+project_name = "Hyper Balls"
+tags = Array[ExtResource("2_u26lj")]([ExtResource("3_lkebk"), ExtResource("3_73s5f"), ExtResource("4_lkebk")])
+images = Array[String](["hyper-balls-01.png", "hyper-balls-02.png", "hyper-balls-03.png"])
+metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

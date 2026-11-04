@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Project" format=3 uid="uid://6ce0covl0ab1"]
+
+[ext_resource type="Script" uid="uid://bjrdlpk5no1ry" path="res://scripts/data/project.gd" id="1_452t5"]
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="2_agpj1"]
+[ext_resource type="Resource" uid="uid://q26t3ctfdl34" path="res://data/tags/02-engines/unity.tres" id="3_mee46"]
+[ext_resource type="Resource" uid="uid://bcw13uj7r5v08" path="res://data/tags/03-languages/csharp.tres" id="4_uaphp"]
+[ext_resource type="Resource" uid="uid://c0tcnbc8gx8bn" path="res://data/tags/01-team/03-large-team.tres" id="5_ss5yi"]
+
+[resource]
+script = ExtResource("1_452t5")
+project_name = "projects.holodia.name"
+type = 1
+tags = Array[ExtResource("2_agpj1")]([ExtResource("3_mee46"), ExtResource("4_uaphp"), ExtResource("5_ss5yi")])
+order = 10
+metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

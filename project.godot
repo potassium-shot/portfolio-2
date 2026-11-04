@@ -17,6 +17,9 @@ config/name_localized={
 }
 run/main_scene="uid://cf6kyaftmp07q"
 config/features=PackedStringArray("4.8", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://vhpmkfv0heol"
 config/icon="res://icon.svg"
 
 [display]
@@ -29,6 +32,7 @@ mouse_cursor/custom_image="uid://dxe3ny84lof2v"
 folder_colors={
 "res://addons/": "gray",
 "res://audio/": "purple",
+"res://data/": "green",
 "res://locale/": "gray",
 "res://resources/": "yellow",
 "res://scenes/": "orange",
@@ -41,7 +45,7 @@ folder_colors={
 
 common/auto_focus_strategy=1
 theme/custom="uid://bek62m4g8yboc"
-theme/custom_font="uid://dumhyne23y3a4"
+theme/custom_font="uid://ct48q3mt0s7r3"
 
 [input]
 
@@ -88,4 +92,5 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 limits/time/time_rollover_secs=2048.0
 lights_and_shadows/multi_bounce_occlusion/enabled=true
+anti_aliasing/quality/use_debanding=true
 environment/defaults/default_clear_color=Color(0.021434618, 0.02143464, 0.021434633, 1)

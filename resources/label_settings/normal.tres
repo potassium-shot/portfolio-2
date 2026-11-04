@@ -1,7 +1,10 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://clees60u27p6e"]
 
-[ext_resource type="FontFile" uid="uid://dumhyne23y3a4" path="res://resources/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf" id="1_d3tua"]
+[ext_resource type="FontFile" uid="uid://ct48q3mt0s7r3" path="res://resources/fonts/DMSerifText-Regular.ttf" id="1_d3tua"]
 
 [resource]
 font = ExtResource("1_d3tua")
-font_size = 20
+font_size = 22
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.8156863)
+shadow_offset = Vector2(0, 0)

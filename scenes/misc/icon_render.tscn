@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d4lgucvyylvv5"]
+
+[ext_resource type="Texture2D" uid="uid://brfpslkx1qn66" path="res://textures/icon.svg" id="1_1ywil"]
+[ext_resource type="Shader" uid="uid://jvq3627yxoe8" path="res://shaders/pp.gdshader" id="2_eaate"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mht3f"]
+shader = ExtResource("2_eaate")
+shader_parameter/bloom_radius = 3.0
+shader_parameter/bloom_intensity = 0.7
+shader_parameter/crt_scroll_speed = 1.0
+shader_parameter/crt_blink_speed = 6.0
+shader_parameter/crt_blink_min_brightness = 0.7
+
+[node name="IconRender" type="Control" unique_id=570854054]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1131868304]
+modulate = Color(0.6825, 0.75, 0.719625, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -256.0
+offset_right = 192.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1ywil")
+
+[node name="PP" type="ColorRect" parent="." unique_id=1942136184]
+z_index = 200
+material = SubResource("ShaderMaterial_mht3f")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true

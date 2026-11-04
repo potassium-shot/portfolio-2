@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Tag" format=3 uid="uid://h5scbmrpe8th"]
+
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="1_kuh6h"]
+
+[resource]
+script = ExtResource("1_kuh6h")
+tag_name = "tags.small-team.name"
+color = Color(0.9582239, 0.37317052, 0.33361948, 1)
+metadata/_custom_type_script = "uid://7roht50hq4wl"

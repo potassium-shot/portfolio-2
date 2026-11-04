@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Tag" format=3 uid="uid://c8ukmavo0xhx4"]
+
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="1_s7ngs"]
+
+[resource]
+script = ExtResource("1_s7ngs")
+tag_name = "Python"
+color = Color(0.504233, 0.8235017, 0.4342371, 1)
+metadata/_custom_type_script = "uid://7roht50hq4wl"

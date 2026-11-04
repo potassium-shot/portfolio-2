@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b1isbarwrjcyk"]
+
+[ext_resource type="LabelSettings" uid="uid://b6iiw1dikh1at" path="res://resources/label_settings/subtitle.tres" id="1_7ta2g"]
+[ext_resource type="Script" uid="uid://b0oqytdvus4iu" path="res://scripts/ui/project_card.gd" id="1_w8gbd"]
+
+[node name="ProjectCard" type="VBoxContainer" unique_id=330400715]
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_w8gbd")
+
+[node name="Title" type="Label" parent="." unique_id=481851570]
+unique_name_in_owner = true
+layout_mode = 2
+text = "project title"
+label_settings = ExtResource("1_7ta2g")
+horizontal_alignment = 1
+
+[node name="TagList" type="HFlowContainer" parent="." unique_id=2033054079]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="ImageList" type="HBoxContainer" parent="." unique_id=70807886]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

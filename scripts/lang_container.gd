@@ -1,8 +1,8 @@
 extends HBoxContainer
 
 
-@onready var en: LinkButton = $En;
-@onready var fr: LinkButton = $Fr;
+@onready var en: BaseButton = $En;
+@onready var fr: BaseButton = $Fr;
 
 
 func _ready() -> void:

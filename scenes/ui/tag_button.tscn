@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://d1c7wuf0lbyho"]
+
+[ext_resource type="Script" uid="uid://n2ewihx4e7qb" path="res://scripts/ui/tag_button.gd" id="1_cfuuf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhr6t"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1.4860457, 1.4860457, 1.4860457, 0.22745098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1.4860457, 1.4860457, 1.4860457, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpewl"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1.4860457, 1.4860457, 1.4860457, 0.14901961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.4860457, 1.4860457, 1.4860457, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 3
+
+[node name="TagButton" type="Button" unique_id=1207363509]
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dhr6t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpewl")
+text = "Tag"
+script = ExtResource("1_cfuuf")

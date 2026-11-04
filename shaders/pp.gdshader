@@ -5,6 +5,7 @@ uniform sampler2D screen : hint_screen_texture, filter_linear_mipmap;
 uniform float bloom_radius = 1.0;
 uniform float bloom_intensity = 1.0;
 
+uniform float crt_diff = 1.0;
 uniform float crt_scroll_speed = 1.0;
 uniform float crt_blink_speed = 1.0;
 uniform float crt_blink_min_brightness = 0.8;
@@ -20,7 +21,7 @@ void fragment() {
 
     COLOR.rgb += bloom.rgb * bloom_intensity;
 
-    float crt_intensity = pow((1.0 + sin(uv_y + TIME * crt_scroll_speed)) * 0.5, 0.5);
+    float crt_intensity = 1.0 - pow((1.0 + sin(uv_y + TIME * crt_scroll_speed)) * 0.5, 0.5) * crt_diff;
     crt_intensity *= mix(crt_blink_min_brightness, 1.0, (sin(TIME * crt_blink_speed) + 1.0) * 0.5);
 
     COLOR *= crt_intensity * 0.5 + 0.5;
