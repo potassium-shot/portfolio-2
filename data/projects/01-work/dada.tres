@@ -14,4 +14,6 @@ script = ExtResource("1_el5c5")
 project_name = "projects.dada.name"
 type = 1
 tags = Array[ExtResource("2_y2fs2")]([ExtResource("3_y2fs2"), ExtResource("4_cm34h"), ExtResource("5_ccj4k"), ExtResource("6_kjex4"), ExtResource("7_vol0p"), ExtResource("8_q1at4")])
+short_description = "projects.dada.short-desc"
+long_description = "projects.dada.long-desc"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cm7ng32ytk58l" path="res://textures/separator-half.svg" id="1_0kc4y"]
 [ext_resource type="LabelSettings" uid="uid://b88almklox5w" path="res://resources/label_settings/title.tres" id="2_aoism"]
 [ext_resource type="LabelSettings" uid="uid://b6iiw1dikh1at" path="res://resources/label_settings/subtitle.tres" id="3_0uyij"]
-[ext_resource type="PackedScene" uid="uid://c7e0kqjiujgv4" path="res://scenes/ui/separator.tscn" id="4_wdn6y"]
+[ext_resource type="PackedScene" uid="uid://c7e0kqjiujgv4" path="res://scenes/ui/separator_h.tscn" id="4_wdn6y"]
 [ext_resource type="Shader" uid="uid://bki83ockynk30" path="res://shaders/rune-wall.gdshader" id="5_ncea1"]
 [ext_resource type="Texture2D" uid="uid://704wcl14uinu" path="res://textures/rune-wall.png" id="6_gm8qi"]
 [ext_resource type="Script" uid="uid://q5tlqec4qftd" path="res://scripts/lang_container.gd" id="7_81xuc"]

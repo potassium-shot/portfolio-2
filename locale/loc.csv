@@ -8,7 +8,19 @@ main.tag-selector.title,Open Tag Filters,Filtrer les Tags
 tags.solo.name,Solo,Solo
 tags.small-team.name,2-5 People,2-5 Personnes
 tags.large-team.name,>5 People,>5 Personnes
-projects.fps-proto.name,FPS Prototype,Prototype de FPS
 projects.dada.name,Tool Developer at Dada! Animation,Développeur Outils à Dada! Animation
-projects.holodia.name,Gameplay Programmer at Holodia,Programmeur Gameplay à Holodia
+projects.dada.short-desc,TODO,TODO
+projects.dada.long-desc,TODO,TODO
 projects.dialog-tool.name,Dialog Tool for Unreal,Éditeur de Dialogue pour Unreal
+projects.dialog-tool.short-desc,TODO,TODO
+projects.dialog-tool.long-desc,TODO,TODO
+projects.fps-proto.name,FPS Prototype,Prototype de FPS
+projects.fps-proto.short-desc,TODO,TODO
+projects.fps-proto.long-desc,TODO,TODO
+projects.holodia.name,Gameplay Programmer at Holodia,Programmeur Gameplay à Holodia
+projects.holodia.short-desc,TODO,TODO
+projects.holodia.long-desc,TODO,TODO
+projects.hyper-balls.short-desc,TODO,TODO
+projects.hyper-balls.long-desc,TODO,TODO
+projects.salty-ghosts.short-desc,TODO,TODO
+projects.salty-ghosts.long-desc,TODO,TODO

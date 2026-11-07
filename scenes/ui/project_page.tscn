@@ -2,6 +2,7 @@
 
 [ext_resource type="LabelSettings" uid="uid://b88almklox5w" path="res://resources/label_settings/title.tres" id="1_pr8sr"]
 [ext_resource type="Script" uid="uid://1iffwe7mw238" path="res://scripts/ui/project_page.gd" id="1_rtky1"]
+[ext_resource type="PackedScene" uid="uid://dlcdletcuixuy" path="res://scenes/ui/separator_v.tscn" id="3_pta3j"]
 
 [node name="ProjectPage" type="VBoxContainer" unique_id=773839621]
 anchors_preset = 10
@@ -32,9 +33,26 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 
+[node name="Spacer" type="Control" parent="HBoxContainer" unique_id=1795599348]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="SeparatorV" parent="HBoxContainer" unique_id=1119732745 instance=ExtResource("3_pta3j")]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="HBoxContainer" unique_id=760326286]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
 [node name="Contents" type="VBoxContainer" parent="HBoxContainer" unique_id=1601715529]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.7
+
+[node name="LongDescription" type="RichTextLabel" parent="HBoxContainer/Contents" unique_id=345474365]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
 
 [connection signal="pressed" from="BackButton" to="." method="_go_back"]

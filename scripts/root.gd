@@ -14,6 +14,7 @@ static var instance: Root:
 @onready var cursor: Cursor = $UI/Cursor
 @onready var main_page: Control = %MainPage
 @onready var project_page: ProjectPage = %ProjectPage
+@onready var image_fetcher: ImageFetcher = $ImageFetcher
 @onready var debug_console: ScrollContainer = $UI/DebugConsole
 @onready var debug_console_lines: BoxContainer = $UI/DebugConsole/Lines
 

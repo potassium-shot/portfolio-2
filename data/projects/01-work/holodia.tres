@@ -12,4 +12,6 @@ project_name = "projects.holodia.name"
 type = 1
 tags = Array[ExtResource("2_agpj1")]([ExtResource("3_mee46"), ExtResource("4_uaphp"), ExtResource("5_ss5yi")])
 order = 10
+short_description = "projects.holodia.short-desc"
+long_description = "projects.holodia.long-desc"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

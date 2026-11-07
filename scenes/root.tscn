@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dot4lrnenb6bw" path="res://textures/particles/magic_01.png" id="4_34frw"]
 [ext_resource type="Shader" uid="uid://jvq3627yxoe8" path="res://shaders/pp.gdshader" id="4_sqa0i"]
 [ext_resource type="PackedScene" uid="uid://qj25igafyc52" path="res://scenes/ui/main_page.tscn" id="8_y3xxt"]
+[ext_resource type="Script" uid="uid://dduvux6a16753" path="res://scripts/image_fetcher.gd" id="12_xsp7o"]
 [ext_resource type="PackedScene" uid="uid://4gnvfrpo826p" path="res://scenes/cursor.tscn" id="13_vgks2"]
 [ext_resource type="PackedScene" uid="uid://decbixwh27c75" path="res://scenes/ui/project_page.tscn" id="35_moyyc"]
 
@@ -215,3 +216,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 alignment = 2
+
+[node name="ImageFetcher" type="Node" parent="." unique_id=1962450095]
+script = ExtResource("12_xsp7o")
+clock_time = 0.1
+metadata/_custom_type_script = "uid://dduvux6a16753"

@@ -13,4 +13,6 @@ project_name = "Salty Ghosts"
 tags = Array[ExtResource("2_1j3mm")]([ExtResource("3_o4ice"), ExtResource("4_yu2ug"), ExtResource("5_a6lq2"), ExtResource("6_yu2ug")])
 order = 40
 images = Array[String](["salty-ghosts-01.png", "salty-ghosts-02.png", "salty-ghosts-03.png"])
+short_description = "projects.salty-ghosts.short-desc"
+long_description = "projects.salty-ghosts.short-desc"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

@@ -12,4 +12,6 @@ project_name = "projects.fps-proto.name"
 tags = Array[ExtResource("2_48kdd")]([ExtResource("3_sn6ul"), ExtResource("4_4ub1a"), ExtResource("5_0exk0")])
 order = 50
 images = Array[String](["fps-proto-01.png", "fps-proto-02.png", "fps-proto-03.png"])
+short_description = "projects.fps-proto.short-desc"
+long_description = "projects.fps-proto.long-desc"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

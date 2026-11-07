@@ -11,4 +11,6 @@ script = ExtResource("1_d1g65")
 project_name = "Hyper Balls"
 tags = Array[ExtResource("2_u26lj")]([ExtResource("3_lkebk"), ExtResource("3_73s5f"), ExtResource("4_lkebk")])
 images = Array[String](["hyper-balls-01.png", "hyper-balls-02.png", "hyper-balls-03.png"])
+short_description = "projects.hyper-balls.short-desc"
+long_description = "projects.hyper-balls.long-desc"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

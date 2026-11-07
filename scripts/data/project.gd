@@ -12,3 +12,5 @@ enum ProjectType {
 @export var tags: Array[Tag]
 @export var order: int = 0
 @export var images: Array[String]
+@export var short_description: String
+@export var long_description: String
