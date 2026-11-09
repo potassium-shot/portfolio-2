@@ -154,6 +154,7 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 10
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer" unique_id=1347017589]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3

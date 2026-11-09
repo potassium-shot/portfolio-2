@@ -1,29 +1,21 @@
 class_name LazyTexture extends TextureRect
 
 
+const PLACEHOLDER: Texture2D = preload("res://textures/loading.png")
+
+
 const DEFAULT_ALPHA: float = 0.7
 const TWEEN_SPEED: float = 0.15
 
 
-var _path: String
-@export var path: String:
-	get:
-		return _path
-
-	set(value):
-		if value == _path:
-			return
-
-		_path = value
-
-		if is_node_ready() and !Engine.is_editor_hint():
-			_update_image()
+var path: String
 
 @export var thumbnail: bool = true
 
 var _topmost_texture: TextureRect = null
 var _tween: Tween = null
 var _cancel_token: Callable = func(): pass
+var _frame_requested: int = -2
 
 
 func _init() -> void:
@@ -31,8 +23,7 @@ func _init() -> void:
 
 
 func _enter_tree() -> void:
-	if Engine.is_editor_hint():
-		return
+	texture = PLACEHOLDER
 
 	_topmost_texture = TextureRect.new()
 	_topmost_texture.anchor_bottom = 1.0
@@ -70,6 +61,9 @@ func _exit_tree() -> void:
 
 
 func _visibility_changed() -> void:
+	if !is_node_ready():
+		return
+
 	if is_visible_in_tree():
 		if thumbnail:
 			var current_size = Vector2.ZERO
@@ -88,10 +82,8 @@ func _visibility_changed() -> void:
 func _ready() -> void:
 	_topmost_texture.expand_mode = expand_mode;
 	_topmost_texture.stretch_mode = stretch_mode
-
-	if !Engine.is_editor_hint():
-		await get_tree().process_frame
-		_update_image()
+	await get_tree().process_frame
+	_update_image()
 
 
 func _mouse_entered() -> void:
@@ -113,7 +105,7 @@ func _mouse_exited() -> void:
 
 
 func _resized() -> void:
-	if thumbnail:
+	if is_node_ready() and thumbnail:
 		var current_size = Vector2.ZERO
 
 		if texture:
@@ -124,13 +116,20 @@ func _resized() -> void:
 
 
 func _update_image() -> void:
-	if thumbnail and (size.x == 0 or size.y == 0):
+	var frame := Engine.get_process_frames()
+
+	if (thumbnail and (size.x == 0 or size.y == 0)) or _frame_requested == frame or _frame_requested + 1 == frame:
 		return
+
+	_frame_requested = frame
 
 	_cancel_token = Root.instance.image_fetcher.fetch_image(
 		func(image: ImageTexture):
 			texture = image
 			_topmost_texture.texture = image,
+		func():
+			await get_tree().create_timer(1.0).timeout
+			_update_image(),
 		path,
 		Vector2i(size) if thumbnail else Vector2i.ZERO,
 	)

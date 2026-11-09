@@ -12,15 +12,25 @@ projects.dada.name,Tool Developer at Dada! Animation,Développeur Outils à Dada
 projects.dada.short-desc,TODO,TODO
 projects.dada.long-desc,TODO,TODO
 projects.dialog-tool.name,Dialog Tool for Unreal,Éditeur de Dialogue pour Unreal
-projects.dialog-tool.short-desc,TODO,TODO
-projects.dialog-tool.long-desc,TODO,TODO
+projects.dialog-tool.short-desc,A tool made in Godot to visually create dialogs in an Unreal Engine project.,Un outil fait sur Godot pour créer visuellement des dialogues pour un projet Unreal Engine.
+projects.dialog-tool.long-desc,"[b]Editor tools[/b] to edit the dialogs of an RPG school project, [url=""https://potassium-shot.eu/project/kokopeli\""]Kokopelli[/url]. Used by the Game Designers.
+
+This tool allows for the creation of [b]complex dialog[/b] for an RPG project at Isart. It was made under Godot, and exports to Unreal. It is able to create complex looping dialog, with multiple characters, [b]triggering events[/b] from within, applying [b]special effects to the text[/b] easily, all within an interface that contains all the tools usually expected of a tool, like [b]undo/redo, searching text, recent files[/b], etc.
+
+It was made in a little more than a week, during production time and personal time, as <b>tool development is a passion of mine</b>.
+
+[font_size=30]Why Godot?[/font_size]
+
+Godot being very [b]fit for making tools[/b], it is the reason developing this tool was so quick, it allowed me to focus on the features of the tool [b]much more efficiently[/b] than if it were to be integrated within Unreal itself. Besides, the back and forth between Unreal and the tool was only minimal, as exporting to unreal only took the click of a button. So in the end, the time gain was very worth it.",TODO
 projects.fps-proto.name,FPS Prototype,Prototype de FPS
 projects.fps-proto.short-desc,TODO,TODO
 projects.fps-proto.long-desc,TODO,TODO
 projects.holodia.name,Gameplay Programmer at Holodia,Programmeur Gameplay à Holodia
 projects.holodia.short-desc,TODO,TODO
 projects.holodia.long-desc,TODO,TODO
-projects.hyper-balls.short-desc,TODO,TODO
-projects.hyper-balls.long-desc,TODO,TODO
+projects.hyper-balls.short-desc,A game of golf that is more about reflection than precision.,Un jeu de golf basé plus sur la réflection que sur la précision.
+projects.hyper-balls.long-desc,"[font_size=30]Synopsis[/font_size]
+
+Hyper Balls is a [b]puzzle[/b], [b]golf-like[/b] game where you throw Balls at targets. Each target must receive one Ball. There are different zones with [b]different effects[/b], some of which slow the Balls down, speeds them up, or even make the Balls explode! Then, some zones are used to [b]activate/deactivate[/b] other zones - and that's where this simple golf game turns into a puzzle game.This is the first game I published (although not the first I made), and it was made in a bit more than a week, so there aren't many levels. (3 tutorial levels + 7 normal levels)",TODO
 projects.salty-ghosts.short-desc,TODO,TODO
 projects.salty-ghosts.long-desc,TODO,TODO

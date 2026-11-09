@@ -12,7 +12,8 @@ static var instance: Root:
 
 @onready var contents: Control = $UI/UIContents
 @onready var cursor: Cursor = $UI/Cursor
-@onready var main_page: Control = %MainPage
+@onready var scroll_container: ScrollContainer = %ScrollContainer
+@onready var main_page: MainPage = %MainPage
 @onready var project_page: ProjectPage = %ProjectPage
 @onready var image_fetcher: ImageFetcher = $ImageFetcher
 @onready var debug_console: ScrollContainer = $UI/DebugConsole
@@ -29,9 +30,13 @@ func _enter_tree() -> void:
 
 
 static func print(...params: Array) -> void:
+	print_many(params)
+
+
+static func print_many(params: Array) -> void:
 	var label := Label.new()
 	label.label_settings = preload("res://resources/label_settings/normal.tres")
-	label.text = " ".join(params)
+	label.text = "{hour}:{minute}:{second} | ".format(Time.get_time_dict_from_system()) + " ".join(params)
 	instance.debug_console_lines.add_child(label)
 	await instance.get_tree().process_frame
 	instance.debug_console.ensure_control_visible(label)
@@ -56,7 +61,6 @@ func _set_viewed_project(project: Project) -> void:
 	var to: Control
 
 	if project:
-		project_page.set_project(project)
 		from = main_page
 		to = project_page
 	else:
@@ -65,6 +69,15 @@ func _set_viewed_project(project: Project) -> void:
 
 	to.visible = true
 	_tween.tween_property(from, "modulate:a", 0.0, 0.3)
+	_tween.tween_callback(
+		func():
+			scroll_container.scroll_vertical = 0
+
+			if project:
+				project_page.set_project(project)
+			else:
+				main_page.show_page()
+	)
 	_tween.tween_property(to, "modulate:a", 1.0, 0.3)
 	await _tween.finished
 	from.visible = false
