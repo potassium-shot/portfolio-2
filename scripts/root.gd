@@ -16,6 +16,8 @@ static var instance: Root:
 @onready var main_page: MainPage = %MainPage
 @onready var project_page: ProjectPage = %ProjectPage
 @onready var image_fetcher: ImageFetcher = $ImageFetcher
+@onready var tag_manager: TagManager = $TagManager
+@onready var web: Web = $Web
 @onready var debug_console: ScrollContainer = $UI/DebugConsole
 @onready var debug_console_lines: BoxContainer = $UI/DebugConsole/Lines
 

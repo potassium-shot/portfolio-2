@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://crf0w2tkcwnyr"]
+
+[ext_resource type="Script" uid="uid://d2jkjmeayb32x" path="res://scripts/ui/video_player.gd" id="1_plvoq"]
+[ext_resource type="Texture2D" uid="uid://s31odejop6ob" path="res://textures/ytb.svg" id="2_plvoq"]
+
+[node name="VideoPlayer" type="TextureRect" unique_id=273357125]
+custom_minimum_size = Vector2(600, 400)
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 5
+stretch_mode = 5
+script = ExtResource("1_plvoq")
+metadata/_custom_type_script = "uid://dmulo5btt173l"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1668522053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_plvoq")
+stretch_mode = 3
+
+[node name="Button" type="Button" parent="." unique_id=1211418170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

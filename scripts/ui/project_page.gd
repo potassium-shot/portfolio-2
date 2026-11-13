@@ -4,6 +4,7 @@ class_name ProjectPage extends VBoxContainer
 @onready var title_label: Label = %TitleLabel
 @onready var galery: BoxContainer = %Galery
 @onready var long_description: RichTextLabel = %LongDescription
+@onready var videos: BoxContainer = %Videos
 
 
 var _tween: Tween = null
@@ -20,6 +21,11 @@ func set_project(project: Project) -> void:
 		t.path = image
 		galery.add_child(t)
 
+	if !project.video.is_empty():
+		var v: VideoPlayer = preload("res://scenes/ui/video_player.tscn").instantiate()
+		v.video_id = project.video
+		videos.add_child(v)
+
 	if _tween and _tween.is_running():
 		_tween.kill()
 
@@ -32,6 +38,9 @@ func set_project(project: Project) -> void:
 
 func clear() -> void:
 	for child: Node in galery.get_children():
+		child.queue_free()
+
+	for child: Node in videos.get_children():
 		child.queue_free()
 
 

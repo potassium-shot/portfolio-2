@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Project" format=3 uid="uid://kq842gsko15a"]
+
+[ext_resource type="Script" uid="uid://bjrdlpk5no1ry" path="res://scripts/data/project.gd" id="1_u56rm"]
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="2_ir348"]
+[ext_resource type="Resource" uid="uid://co1bqggjnwlo" path="res://data/tags/01-team/01-solo.tres" id="3_88pbj"]
+[ext_resource type="Resource" uid="uid://djponvxeccoy8" path="res://data/tags/02-engines/godot.tres" id="4_imhnm"]
+[ext_resource type="Resource" uid="uid://bcw13uj7r5v08" path="res://data/tags/03-languages/csharp.tres" id="5_mrcr3"]
+
+[resource]
+script = ExtResource("1_u56rm")
+project_name = "projects.ultra-rising.name"
+tags = Array[ExtResource("2_ir348")]([ExtResource("3_88pbj"), ExtResource("4_imhnm"), ExtResource("5_mrcr3")])
+order = 17
+images = Array[String](["ultra-rising-01.png", "ultra-rising-02.png", "ultra-rising-03.png"])
+short_description = "projects.ultra-rising.short-desc"
+long_description = "projects.ultra-rising.long-desc"
+metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

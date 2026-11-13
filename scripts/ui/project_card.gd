@@ -23,6 +23,19 @@ func _ready() -> void:
 		t.path = image
 		image_list.add_child(t)
 
+	await get_tree().process_frame
+	Root.instance.tag_manager.tag_filter_changed.connect(_tag_filter_changed)
+
+
+func _exit_tree() -> void:
+	if Root.instance.tag_manager.tag_filter_changed.is_connected(_tag_filter_changed):
+		Root.instance.tag_manager.tag_filter_changed.disconnect(_tag_filter_changed)
+
+
+func _tag_filter_changed(tags: Array[Tag]) -> void:
+	var included = tags.all(func(tag: Tag) -> bool: return tag in project.tags)
+	modulate.a = 1.0 if included else 0.3
+
 
 func _on_gui_input(event: InputEvent) -> void:
 	var button_event := event as InputEventMouseButton

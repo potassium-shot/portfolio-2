@@ -14,3 +14,4 @@ enum ProjectType {
 @export var images: Array[String]
 @export var short_description: String
 @export var long_description: String
+@export var video: String = ""

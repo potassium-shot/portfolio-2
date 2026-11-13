@@ -15,4 +15,5 @@ order = 30
 images = Array[String](["dialog-tool-01.png", "dialog-tool-02.png", "dialog-tool-03.png"])
 short_description = "projects.dialog-tool.short-desc"
 long_description = "projects.dialog-tool.long-desc"
+video = "W4PIkmjwGsQ"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

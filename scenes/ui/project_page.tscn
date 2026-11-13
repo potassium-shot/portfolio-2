@@ -57,4 +57,9 @@ bbcode_enabled = true
 fit_content = true
 selection_enabled = true
 
+[node name="Videos" type="VBoxContainer" parent="HBoxContainer/Contents" unique_id=2049920623]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
 [connection signal="pressed" from="BackButton" to="." method="_go_back"]

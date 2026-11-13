@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Project" format=3 uid="uid://cob6f6sh4070u"]
+
+[ext_resource type="Script" uid="uid://bjrdlpk5no1ry" path="res://scripts/data/project.gd" id="1_wf4yb"]
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="2_8j3av"]
+[ext_resource type="Resource" uid="uid://c0tcnbc8gx8bn" path="res://data/tags/01-team/03-large-team.tres" id="3_7nxh0"]
+[ext_resource type="Resource" uid="uid://jotsx57mm6jv" path="res://data/tags/03-languages/cpp.tres" id="5_tp0pg"]
+[ext_resource type="Resource" uid="uid://dic3we41080m0" path="res://data/tags/02-engines/unreal.tres" id="6_nqaup"]
+
+[resource]
+script = ExtResource("1_wf4yb")
+project_name = "Kokopeli"
+tags = Array[ExtResource("2_8j3av")]([ExtResource("3_7nxh0"), ExtResource("6_nqaup"), ExtResource("5_tp0pg")])
+order = 31
+images = Array[String](["kokopeli-01.png", "kokopeli-02.png", "kokopeli-03.png"])
+short_description = "projects.kokopeli.short-desc"
+long_description = "projects.kokopeli.long-desc"
+metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

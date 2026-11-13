@@ -17,7 +17,7 @@ projects.dialog-tool.long-desc,"[b]Editor tools[/b] to edit the dialogs of an RP
 
 This tool allows for the creation of [b]complex dialog[/b] for an RPG project at Isart. It was made under Godot, and exports to Unreal. It is able to create complex looping dialog, with multiple characters, [b]triggering events[/b] from within, applying [b]special effects to the text[/b] easily, all within an interface that contains all the tools usually expected of a tool, like [b]undo/redo, searching text, recent files[/b], etc.
 
-It was made in a little more than a week, during production time and personal time, as <b>tool development is a passion of mine</b>.
+It was made in a little more than a week, during pre-production time and personal time, as [b]tool development is a passion of mine[/b].
 
 [font_size=30]Why Godot?[/font_size]
 
@@ -32,5 +32,26 @@ projects.hyper-balls.short-desc,A game of golf that is more about reflection tha
 projects.hyper-balls.long-desc,"[font_size=30]Synopsis[/font_size]
 
 Hyper Balls is a [b]puzzle[/b], [b]golf-like[/b] game where you throw Balls at targets. Each target must receive one Ball. There are different zones with [b]different effects[/b], some of which slow the Balls down, speeds them up, or even make the Balls explode! Then, some zones are used to [b]activate/deactivate[/b] other zones - and that's where this simple golf game turns into a puzzle game.This is the first game I published (although not the first I made), and it was made in a bit more than a week, so there aren't many levels. (3 tutorial levels + 7 normal levels)",TODO
-projects.salty-ghosts.short-desc,TODO,TODO
-projects.salty-ghosts.long-desc,TODO,TODO
+projects.kokopeli.short-desc,"A vertical slice for an RPG made in Unreal Engine at Isart, with 20 people (2D/3D artists, game designers, gameplay programmers, engine programmers and sound designers)",TODO
+projects.kokopeli.long-desc,"A vertical slice (demo) for an RPG made in Unreal Engine at Isart, with 20 people (2D/3D artists, game designers, gameplay programmers, engine programmers and sound designers)
+
+See also the [url=""https://potassium-shot.eu/project/dialog-tool""]dialog creation tool[/url] I made for it.
+
+[font_size=30]The Game[/font_size]
+
+Kokopelli is a tun-based RPG taking place in Albuquerque, USA.
+
+You embody the member of a Spirit Brigade in charge of befriending spirits in a world in which humans and spirits live in harmony.
+
+The combat gameplay opposes the player to a spirit. They both have [b]dolls[/b], and make use of [b]dice[/b], that each opponent throws to [b]attack[/b], [b]heal[/b], or do others actions. There are [b]5 turns[/b], and the one who [b]killed the most dolls at the end wins[/b]. The catch is that, the fights are very hard, and barely winnable. So to win, you actually have to [b]cheat[/b].
+
+<h2>My role</h2>
+
+I am the one who made the dialog system, as can be seen in the dialog creation tool page. I also made the camera, with various tools to manipulate it in different sections of the level design. And I worked on the inventory. This is without counting various smaller features and many, many bug fixes.",TODO
+projects.salty-ghosts.short-desc,Game jam game about a ghost that shoots salt.,TODO
+projects.salty-ghosts.long-desc,"[b]Salty Ghosts[/b] Is a game made in 3 days by me, another gameplay programmer and an artist. It involves shooting ghost enemies with salt, but as you are a ghost too, the [b]]salt you shoot can hurt you[/b].
+There are multiple [b]enemies[/b], like the basic one that pursues you, but also one that create [b]repulsions[/b], and one that creates moving [b]tornadoes[/b]. The repulsions and tornados themselves don't hurt you ; but they [b]bring salt with them[/b], which can potentially hit you.
+On the final level, there is a [b]boss[/b] with multiple patterns, which are harder versions of the patterns of the enemies.",TODO
+projects.ultra-rising.name,Hack and Slash,Hack and Slash
+projects.ultra-rising.short-desc,A hack and slash prototype in Godot.,Un prototype de hack and slash dans Godot.
+projects.ultra-rising.long-desc,"A small project aimed at making a [b]juicy[/b], good-feeling hack and slash prototype. It features blade combat with a [b]combo[/b] system, and small [b]enemies[/b] that can be destroyed. The game puts emphasis on [b]air combat[/b]: there are special moves for jumping and slashing, and enemies can be [b]launched and juggled[/b] in the air. They also take fall damage.",TODO

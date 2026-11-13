@@ -10,7 +10,9 @@
 [ext_resource type="Shader" uid="uid://jvq3627yxoe8" path="res://shaders/pp.gdshader" id="4_sqa0i"]
 [ext_resource type="PackedScene" uid="uid://qj25igafyc52" path="res://scenes/ui/main_page.tscn" id="8_y3xxt"]
 [ext_resource type="Script" uid="uid://dduvux6a16753" path="res://scripts/image_fetcher.gd" id="12_xsp7o"]
+[ext_resource type="Script" uid="uid://g140nxku0g0o" path="res://scripts/tag_manager.gd" id="13_l5cgh"]
 [ext_resource type="PackedScene" uid="uid://4gnvfrpo826p" path="res://scenes/cursor.tscn" id="13_vgks2"]
+[ext_resource type="Script" uid="uid://dry6f0ti3jhqu" path="res://scripts/web.gd" id="14_vgks2"]
 [ext_resource type="PackedScene" uid="uid://decbixwh27c75" path="res://scenes/ui/project_page.tscn" id="35_moyyc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ya6yc"]
@@ -186,6 +188,45 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
+[node name="IFrameCover" type="Control" parent="UI/UIContents" unique_id=1191746084]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Darken" type="ColorRect" parent="UI/UIContents/IFrameCover" unique_id=940696794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0142752165, 0.014275218, 0.014275218, 0.6039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/UIContents/IFrameCover" unique_id=1398457525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UIContents/IFrameCover/MarginContainer" unique_id=396765809]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="BackButton" type="Button" parent="UI/UIContents/IFrameCover/MarginContainer/VBoxContainer" unique_id=433980780]
+layout_mode = 2
+theme_type_variation = &"CancelButton"
+text = "Back"
+
 [node name="Cursor" parent="UI" unique_id=951097389 instance=ExtResource("13_vgks2")]
 z_index = 100
 layout_mode = 0
@@ -222,3 +263,14 @@ alignment = 2
 script = ExtResource("12_xsp7o")
 clock_time = 0.1
 metadata/_custom_type_script = "uid://dduvux6a16753"
+
+[node name="TagManager" type="Node" parent="." unique_id=527130753]
+script = ExtResource("13_l5cgh")
+metadata/_custom_type_script = "uid://g140nxku0g0o"
+
+[node name="Web" type="Node" parent="." unique_id=1030783164 node_paths=PackedStringArray("iframe_cover")]
+script = ExtResource("14_vgks2")
+iframe_cover = NodePath("../UI/UIContents/IFrameCover")
+metadata/_custom_type_script = "uid://dry6f0ti3jhqu"
+
+[connection signal="pressed" from="UI/UIContents/IFrameCover/MarginContainer/VBoxContainer/BackButton" to="Web" method="hide_video"]
