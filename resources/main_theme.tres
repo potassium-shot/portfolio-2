@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://6m4af52h1rb7" path="res://textures/arrow-up.svg" id="3_u427p"]
 [ext_resource type="Texture2D" uid="uid://273hm5jmaku1" path="res://textures/arrow-right.svg" id="4_7rtxy"]
 [ext_resource type="Texture2D" uid="uid://do6iqrycrxv81" path="res://textures/arrow-left.svg" id="5_hofdy"]
+[ext_resource type="Texture2D" uid="uid://bsvq3pyudlodv" path="res://textures/frame.svg" id="6_7rtxy"]
 [ext_resource type="FontFile" uid="uid://ct48q3mt0s7r3" path="res://resources/fonts/DMSerifText-Regular.ttf" id="6_u427p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ols5k"]
@@ -81,11 +82,12 @@ content_margin_top = 5.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
 bg_color = Color(0.9776998, 0.17310083, 0.2643781, 0.7294118)
+draw_center = false
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1.4860457, 1.4860457, 1.4860457, 1)
+border_color = Color(1.4813037, 0.3203007, 0.2688223, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -165,6 +167,17 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 corner_detail = 2
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6tn7"]
+content_margin_left = 50.0
+content_margin_top = 30.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+texture = ExtResource("6_7rtxy")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nojw"]
 content_margin_left = 8.0
 content_margin_top = 8.0
@@ -176,8 +189,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 corner_detail = 3
-
-[sub_resource type="ImageTexture" id="ImageTexture_ols5k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x127s"]
 bg_color = Color(0.601223, 0.601223, 0.60122275, 1)
@@ -209,7 +220,9 @@ shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnc4k"]
 content_margin_left = 1.0
+content_margin_top = 1.0
 content_margin_right = 1.0
+content_margin_bottom = 1.0
 bg_color = Color(0.08, 0.08, 0.08, 0.47843137)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
@@ -217,12 +230,16 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 corner_detail = 1
 
+[sub_resource type="ImageTexture" id="ImageTexture_ols5k"]
+
 [resource]
 default_font = ExtResource("6_u427p")
+Button/font_sizes/font_size = 22
 Button/styles/hover = SubResource("StyleBoxFlat_ols5k")
 Button/styles/normal = SubResource("StyleBoxFlat_45o0r")
 Button/styles/pressed = SubResource("StyleBoxFlat_biaja")
 CancelButton/base_type = &"Button"
+CancelButton/colors/font_color = Color(0.94, 0.34169, 0.31019998, 1)
 CancelButton/styles/hover = SubResource("StyleBoxFlat_7rtxy")
 CancelButton/styles/normal = SubResource("StyleBoxFlat_u427p")
 CancelButton/styles/pressed = SubResource("StyleBoxFlat_hofdy")
@@ -236,9 +253,17 @@ FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxFlat
 FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxFlat_qjhx0")
 FoldableContainer/styles/title_hover_panel = SubResource("StyleBoxFlat_83bj2")
 FoldableContainer/styles/title_panel = SubResource("StyleBoxFlat_0ahyh")
+FramedPanelContainer/base_type = &"PanelContainer"
+FramedPanelContainer/styles/panel = SubResource("StyleBoxTexture_j6tn7")
+HScrollBar/constants/padding_bottom = 4
+HScrollBar/constants/padding_top = 4
 LinkButton/colors/font_pressed_color = Color(0.5914361, 1.4862548, 0.97919095, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2nojw")
 RichTextLabel/colors/selection_color = Color(0.39, 1, 0.6441667, 0.33333334)
+ScrollBar/styles/grabber = SubResource("StyleBoxFlat_x127s")
+ScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_tieq2")
+ScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_bjb6u")
+ScrollBar/styles/scroll = SubResource("StyleBoxFlat_vnc4k")
 VScrollBar/constants/padding_left = 4
 VScrollBar/constants/padding_right = 4
 VScrollBar/icons/decrement = SubResource("ImageTexture_ols5k")
@@ -247,7 +272,3 @@ VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_ols5k")
 VScrollBar/icons/increment = SubResource("ImageTexture_ols5k")
 VScrollBar/icons/increment_highlight = SubResource("ImageTexture_ols5k")
 VScrollBar/icons/increment_pressed = SubResource("ImageTexture_ols5k")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_x127s")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_tieq2")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_bjb6u")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_vnc4k")

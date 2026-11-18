@@ -9,49 +9,102 @@ tags.solo.name,Solo,Solo
 tags.small-team.name,2-5 People,2-5 Personnes
 tags.large-team.name,>5 People,>5 Personnes
 projects.dada.name,Tool Developer at Dada! Animation,Développeur Outils à Dada! Animation
-projects.dada.short-desc,TODO,TODO
-projects.dada.long-desc,TODO,TODO
+projects.dada.short-desc,"Tool developer, company's pipeline integration inside Unity and Unreal + outside tools.","Développeur outils, intégration de la pipeline de l'entreprise dans Unity, Unreal + des outils externes."
+projects.dada.long-desc,"Dada! Animation is an animation studio. I worked there as tool developer, initially making automation on Unity: automatic creation of shot scenes, shortcuts to setup all the standard scene structures of the company.
+
+Eventually I made tools that automatically fetch assets made by artists from the company's database, and organize them into Unity and Unreal projects, and automatically create ready-to-record scenes with all the assets setup and positioned, along with tools to detect and download when artists push new versions of their assets.
+
+I also forked Unity's recorder package, which is used to record the Unity scenes into videos or png frames. The png encoding was singlethreaded and blocking, so I made it multithreaded, improving rendering performance by around 30%.
+
+There were already company tools inside Unity when I arrived, but these were intially made individually without much planning, so I spent some time cleaning up the code and writing unit tests, fixing many bugs along the way.
+
+Over time I also had the occasion to create small external tools using Rust, like tools to auto-update Unity projects, or.... kill frozen Unity instances.... which was sadly very useful haha.","Dada! Animation est un studio d'animation. J'y ai travaillé en tant que développeur d'outils, commençant par de l'automatisation dans Unity: création automatique de plans, raccourcis pour mettre en place la structure standard de scène de l'entreprise, etc.
+
+Plus tard, j'y ai aussi créé des outils qui récupèrent automatiquement les assets créés par les artistes depuis la base de donnée de l'entreprise, et les organise dans un projet Unity ou Unreal, créant automatiquement des scènes prêtes pour l'enregistrement. Les assets pré-disposés et positionnés correctement. Tout cela en détectant lorsque les artistes crée de nouvelles versions de leurs assets, pour les mettre à jour dans la scène.
+
+J'ai aussi modifié le Recorder de Unity, c'est-à-dire le plugin capable de créer une vidéo en enregistrant une scène. L'encodage png bloquait l'execution du rendu, alors je l'ai multithreadé, améliorant la rapidité des rendus d'environ 30%.
+
+Il y avait déjà des outils de l'entreprise dans Unity lorsque je suis arrivé, mais ils étaient initialement conçu d'une manière peu adapté à leur expansion. J'ai passé du temps à donner une archtecture plus robuste au code et à implémenter des testes unitaires, corrigeant de nombreux bugs au passage.
+
+J'ai aussi eu l'occasion de créer de petits outils externes en Rust, comme un outil pour automatiquement mettre à jour plusieurs projets Unity, ou.... interrompre des instances d'Unity planté.... ce qui fut utile de nombreuse foi, haha."
 projects.dialog-tool.name,Dialog Tool for Unreal,Éditeur de Dialogue pour Unreal
 projects.dialog-tool.short-desc,A tool made in Godot to visually create dialogs in an Unreal Engine project.,Un outil fait sur Godot pour créer visuellement des dialogues pour un projet Unreal Engine.
-projects.dialog-tool.long-desc,"[b]Editor tools[/b] to edit the dialogs of an RPG school project, [url=""https://potassium-shot.eu/project/kokopeli\""]Kokopelli[/url]. Used by the Game Designers.
+projects.dialog-tool.long-desc,"[b]Editor tools[/b] to edit the dialogs of an RPG school project, [url={""project"": ""uid://cob6f6sh4070u""}]Kokopelli[/url]. Used by the Game Designers.
 
-This tool allows for the creation of [b]complex dialog[/b] for an RPG project at Isart. It was made under Godot, and exports to Unreal. It is able to create complex looping dialog, with multiple characters, [b]triggering events[/b] from within, applying [b]special effects to the text[/b] easily, all within an interface that contains all the tools usually expected of a tool, like [b]undo/redo, searching text, recent files[/b], etc.
+This tool allows for the creation of [b]complex dialog[/b] for an RPG project at Isart. It was made under Godot, and exports to Unreal. It is able to create complex looping dialog, with multiple characters, [b]triggering events[/b] from within the dialog, applying [wave]special effects to the text[/wave] easily, all within an interface that contains all the tools usually expected of a tool, like [b]undo/redo, searching text, recent files[/b], etc.
 
 It was made in a little more than a week, during pre-production time and personal time, as [b]tool development is a passion of mine[/b].
 
 [font_size=30]Why Godot?[/font_size]
 
-Godot being very [b]fit for making tools[/b], it is the reason developing this tool was so quick, it allowed me to focus on the features of the tool [b]much more efficiently[/b] than if it were to be integrated within Unreal itself. Besides, the back and forth between Unreal and the tool was only minimal, as exporting to unreal only took the click of a button. So in the end, the time gain was very worth it.",TODO
+Godot being very [b]fit for making tools[/b], it is the reason developing this tool was so quick, it allowed me to focus on the features of the tool [b]much more efficiently[/b] than if it were to be integrated within Unreal itself. Besides, the back and forth between Unreal and the tool was only minimal, as exporting to unreal only takes the click of a button. So in the end, the time gain was very worth it.","[b]Outil d'éditeur[/b] pour éditer les dialogues d'un projet de RPG à Isart, [url={""project"": ""uid://cob6f6sh4070u""}]Kokopelli[/url]. Il a été utilisé par les game designers.
+
+Cet outil permet la création de [b]dialogues complexes[/b] pour un projet de RPG à Isart. Il est fait sur [b]Godot[/b], et exporte vers [b]Unreal Engine[/b]. Il peut créer des dialogues complexes avec des boules, avec plusieurs personnages, peut [b]executer des évenements[/b] gérables par code, supporte différents [wave]effects de texte[/wave] à travers des tags de markup, et le tout dans une interface qui contient les fonctionnalités habituelles attendu d'un outil, comme le [b]undo/redo, recherche de texte, fichiers récents[/b], etc.
+
+Je l'ai fait en un peu d'une semaine, pendant le temps de pré-production et sur mon temps libre, car le [b]développement d'outls est une de mes passions[/b].
+
+[font_size=30]Pourquoi Godot ?[/font_size]
+
+Godot est très [b]adapté à la création d'outils[/b]. C'est la raison pour laquel j'ai pu le développer si rapidement. Cela m'a permit de m'attarder principalement sur les fonctionnalités de l'outil, là où une intégration direct dans Unreal m'aurait demander beaucoup de temps d'intégration dans le moteur. L'export vers unreal ne passe que par un simple fichier .csv, ce qui le rend [b]rapide et efficace[/b]. Le gain de temps était notable."
 projects.fps-proto.name,FPS Prototype,Prototype de FPS
-projects.fps-proto.short-desc,TODO,TODO
-projects.fps-proto.long-desc,TODO,TODO
+projects.fps-proto.short-desc,FPS Gamefeel prototype,Prototype game-feel de FPS
+projects.fps-proto.long-desc,"A small prototype for an FPS. The goal was to create satisfying 3C for an FPS game, with procedural shooting and recoil animations.","Un petit prototype de FPS. Le but était de créer des 3C satisfaisante pour un FPS, avec des animations procédurales de tir et de recule de l'arme."
 projects.holodia.name,Gameplay Programmer at Holodia,Programmeur Gameplay à Holodia
-projects.holodia.short-desc,TODO,TODO
-projects.holodia.long-desc,TODO,TODO
+projects.holodia.short-desc,"VR fitness live service game: Character customization, juiciness, bugfixes.","Jeu de fitness VR, en live service. Customizateur d'avatar, juiciness, et corrections de bugs."
+projects.holodia.long-desc,"Holodia is a studio that maintains Holofit, a VR fitness game that can connect to your fitness devices allow you to move through virtual environments. I worked at there as a gameplay programmer, mostly adding small quality of life features to the game and fixing bugs.
+
+But I also made a new character customization system, with the help of another gameplay programmer: the player can customize different parts of their skin, with assets pulled from a common database, which can updated in live service to add new cosmetics.
+
+I also participated in the creation of a bossfight against a giant octopus, which uses VR passthrough to make the boss look like it is inside your room. The fight forces you to pickup bombs on the ground to throw them back, and other actions that require the player to crouch and move their body.",TODO
 projects.hyper-balls.short-desc,A game of golf that is more about reflection than precision.,Un jeu de golf basé plus sur la réflection que sur la précision.
 projects.hyper-balls.long-desc,"[font_size=30]Synopsis[/font_size]
 
-Hyper Balls is a [b]puzzle[/b], [b]golf-like[/b] game where you throw Balls at targets. Each target must receive one Ball. There are different zones with [b]different effects[/b], some of which slow the Balls down, speeds them up, or even make the Balls explode! Then, some zones are used to [b]activate/deactivate[/b] other zones - and that's where this simple golf game turns into a puzzle game.This is the first game I published (although not the first I made), and it was made in a bit more than a week, so there aren't many levels. (3 tutorial levels + 7 normal levels)",TODO
-projects.kokopeli.short-desc,"A vertical slice for an RPG made in Unreal Engine at Isart, with 20 people (2D/3D artists, game designers, gameplay programmers, engine programmers and sound designers)",TODO
+Hyper Balls is a [b]puzzle[/b], [b]golf-like[/b] game where you throw Balls at targets. Each target must receive one Ball. There are different zones with [b]different effects[/b], some of which slow the Balls down, speeds them up, or even make the Balls explode! Then, some zones are used to [b]activate/deactivate[/b] other zones - and that's where this simple golf game turns into a puzzle game.
+
+This is the first game I published (although not the first I made), and it was made in a bit more than a week, so there aren't many levels. (3 tutorial levels + 7 normal levels)","Hyper Balls est un jeu de [b]puzzle[/b] et de [b]gold[/b], le but étant de lancer des balles pour qu'elles atteigne les cibles. Chaque cible doit recevoir une balle. Il y a plusieurs zones avec chacune un [b]effet[/b], come par exemple ralentir ou accelérer les balles, ou les détruire. Puis, certaines zones peuvent [b]activer ou désactiver[/b] d'autres zones lorsqu'elles ont le même cigle. C'est ce qui transforme ce jeu de golf en puzzle.
+
+C'est le premier jeu que j'ai publié, et je l'ai fait en l'espace de 10 jours. Il comporte 10 niveaux (3 tutoriels + 7 niveaux normaux)."
+projects.kokopeli.short-desc,A vertical slice for an RPG made in Unreal Engine at Isart,Une démo de RPG sur Unreal à Isart.
 projects.kokopeli.long-desc,"A vertical slice (demo) for an RPG made in Unreal Engine at Isart, with 20 people (2D/3D artists, game designers, gameplay programmers, engine programmers and sound designers)
 
-See also the [url=""https://potassium-shot.eu/project/dialog-tool""]dialog creation tool[/url] I made for it.
+See also the [url={""project"": ""uid://p0e4721sun7c""}]dialog creation tool[/url] I made for it.
 
 [font_size=30]The Game[/font_size]
 
-Kokopelli is a tun-based RPG taking place in Albuquerque, USA.
+Kokopelli is a turn-based RPG taking place in Albuquerque, USA.
 
 You embody the member of a Spirit Brigade in charge of befriending spirits in a world in which humans and spirits live in harmony.
 
 The combat gameplay opposes the player to a spirit. They both have [b]dolls[/b], and make use of [b]dice[/b], that each opponent throws to [b]attack[/b], [b]heal[/b], or do others actions. There are [b]5 turns[/b], and the one who [b]killed the most dolls at the end wins[/b]. The catch is that, the fights are very hard, and barely winnable. So to win, you actually have to [b]cheat[/b].
 
-<h2>My role</h2>
+[font_size=30]My role[/font_size]
 
-I am the one who made the dialog system, as can be seen in the dialog creation tool page. I also made the camera, with various tools to manipulate it in different sections of the level design. And I worked on the inventory. This is without counting various smaller features and many, many bug fixes.",TODO
-projects.salty-ghosts.short-desc,Game jam game about a ghost that shoots salt.,TODO
-projects.salty-ghosts.long-desc,"[b]Salty Ghosts[/b] Is a game made in 3 days by me, another gameplay programmer and an artist. It involves shooting ghost enemies with salt, but as you are a ghost too, the [b]]salt you shoot can hurt you[/b].
+I am the one who made the dialog system, as can be seen in the dialog creation tool page. I also made the camera, with various tools to manipulate it in different sections of the level design. And I worked on the inventory. This is without counting various smaller features and many, many bug fixes.","Une vertical slice (démo) pour un RPG fait sur Unreal Engine à Isart, dans une équipe d'environ 20 personnes (artistes 2D, 3D, game designers, gameplay programmers, engine programmers et sound designers).
+
+Voir l'[url={""project"": ""uid://p0e4721sun7c""}]outil de création de dialog[/url] que j'ai crée pour ce projet.
+
+[font_size=30]Le Jeu[/font_size]
+
+Kokopelli est un RPG tour-par-tour qui se passe à Albuquerque, aux États-Unis.
+
+Vous incarnez un membre de la Brigade des Esprit, responsable de pacifier les esprits, dans un monde où les humains et les esprits vivent en harmonie.
+
+Pendant les combats, le joueur s'oppose à un esprit. Ils ont chacun des [b]poupées[/b], et utilsent leurs [b]dés[/b], que chaque combattant lance pour [b]attaquer[/b], [b]se soigner[/b], ou faire d'autres actions. Il y a [b]5 tours[/b], et celui qui à [b]détruit le plus de poupées adverses à la fin gagne[/b].
+Le problème, c'est que les combats sont très difficile, et quasiment impossibles à gagner. Alors, pour gagner, [b]vous devez tricher[/b].
+
+[font_size=30]Mon Rôle[/font_size]
+
+Je me suis occupé du système de dialogue, comme mentionné sur [url={""project"": ""uid://p0e4721sun7c""}]la page du créateur de dialogues[/url]. J'ai aussi fait la [b]caméra[/b], avec quelques outils pour pouvoir la manipuler à travers le niveau. J'ai aussi créé le système d'inventaire. Et bien sûr, beaucoup, beaucoup de corrections de bug."
+projects.salty-ghosts.short-desc,Game jam game where your own projectiles hurt you.,Jeu de game jam où vos propres projectiles vous blessent.
+projects.salty-ghosts.long-desc,"[b]Salty Ghosts[/b] is a game made in 3 days by me, another gameplay programmer and an artist. It involves shooting ghost enemies with salt, but as you are a ghost too, the [b]salt you shoot can hurt you[/b].
+
 There are multiple [b]enemies[/b], like the basic one that pursues you, but also one that create [b]repulsions[/b], and one that creates moving [b]tornadoes[/b]. The repulsions and tornados themselves don't hurt you ; but they [b]bring salt with them[/b], which can potentially hit you.
-On the final level, there is a [b]boss[/b] with multiple patterns, which are harder versions of the patterns of the enemies.",TODO
+
+On the final level, there is a [b]boss[/b] with multiple patterns, which are harder versions of the patterns of the enemies.","[b]Salty Ghosts[/b] est un jeu de game jam fait en 3 jours par un artiste, moi et un autre gameplay programmeur. Il comporte plusieurs niveau dans lesquels le joueur doit tirer sur les fantômmes avec du sel; mais le joueur est aussi un fantômme, donc le sel peut [b]aussi lui infliger des dégats[/b].
+
+Il y a [b]plusieurs types d'ennemis[/b], comme l'ennemi basique qui poursuit simplement le joueur. Mais il y en a aussi un qui crée des [b]vagues de répulsions[/b], et un qui lance des [b]tornades[/b] vers le joueurs. Les répulsions et les tornades elles-mêmes n'infligent pas de dégâts, mais elle peuvent [b]emporter les tas de sel sur leur chemin[/b], ce qui peut blesser le joueur.
+
+Dans le dernier niveau, il y a un [b]boss[/b], avec plusieurs attaques, qui sont des versions plus difficiles des attaques des ennemis."
 projects.ultra-rising.name,Hack and Slash,Hack and Slash
 projects.ultra-rising.short-desc,A hack and slash prototype in Godot.,Un prototype de hack and slash dans Godot.
-projects.ultra-rising.long-desc,"A small project aimed at making a [b]juicy[/b], good-feeling hack and slash prototype. It features blade combat with a [b]combo[/b] system, and small [b]enemies[/b] that can be destroyed. The game puts emphasis on [b]air combat[/b]: there are special moves for jumping and slashing, and enemies can be [b]launched and juggled[/b] in the air. They also take fall damage.",TODO
+projects.ultra-rising.long-desc,"A small project aimed at making a [b]juicy[/b], good-feeling hack and slash prototype. It features [b]advanced movement tech[/b], as well as blade combat with a [b]combo[/b] system, and small [b]enemies[/b] that can be destroyed. The game puts emphasis on [b]air combat[/b]: there are special moves for jumping and slashing, and enemies can be [b]launched and juggled[/b] in the air. They also take fall damage. There are two discrete levels of height, [i]grounded[/i], and [i]in-air[/i]. Being in the same level of height as an enemy allows your blade to hit it.","Un petit prototype de hack and slash avec pour but d'être [b]juicy[/b], avec une attention portée sur le [b]game-feel[/b]. Il possède des tehniques de [b]mouvements avancées[/b], ainsi que du combat à l'épée avec des [b]combos[/b], et des [b]ennemis simples[/b]. Le jeu met l'enphase sur le [b]combat aérien[/b]: il y a des mouvements spécifiques lorsque le joueur tappe en sautant, et les ennemis peuvent être [b]envoyés dans les airs[/b] et [b]jonglés[/b] dans les airs. Ils prennent aussi des dégats de chutte. Il y a deux niveaux de hauteur: [b]sur/proche le sol[/b], et [b]dans les airs[/b]. Être au même niveau de hauteur qu'un ennemi permet de l'attaquer."

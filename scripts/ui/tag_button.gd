@@ -27,7 +27,7 @@ func _ready() -> void:
 
 
 func _exit_tree() -> void:
-	if Root.instance.tag_manager.tag_filter_changed.is_connected(_tag_filter_changed):
+	if !Engine.is_editor_hint() and Root.instance.tag_manager.tag_filter_changed.is_connected(_tag_filter_changed):
 		Root.instance.tag_manager.tag_filter_changed.disconnect(_tag_filter_changed)
 
 

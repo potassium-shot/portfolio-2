@@ -6,8 +6,13 @@ static var instance: Root:
 	get:
 		return _instance
 
+static var mobile: bool:
+	get:
+		return instance._mobile
+
 
 @export var bg_particle_emitters: Array[CPUParticles2D]
+@export var disable_on_mobile: Array[Control]
 
 
 @onready var contents: Control = $UI/UIContents
@@ -25,10 +30,18 @@ static var instance: Root:
 var _particle_densities: Array[float]
 var _currently_viewed_project: Project = null
 var _tween: Tween = null
+var _mobile: bool
 
 
 func _enter_tree() -> void:
 	_instance = self
+	_mobile = OS.has_feature("web_android") or OS.has_feature("web_ios")
+
+	if _mobile:
+		for disable in disable_on_mobile:
+			disable.visible = false
+
+		get_window().content_scale_factor = 1.8
 
 
 static func print(...params: Array) -> void:
@@ -107,3 +120,20 @@ func _resized() -> void:
 		p.emission_rect_extents = half
 		p.position = half
 		p.amount = roundi(contents.size.x * contents.size.y / density)
+
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_WM_GO_BACK_REQUEST:
+			if _currently_viewed_project:
+				set_viewed_project(null)
+
+
+func _on_ui_gui_input(event: InputEvent) -> void:
+	var mouse_event := event as InputEventMouseButton
+
+	if mouse_event:
+		if mouse_event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			scroll_container.scroll_vertical += 116
+		elif mouse_event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			scroll_container.scroll_vertical -= 116

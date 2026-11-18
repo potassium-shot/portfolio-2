@@ -14,4 +14,6 @@ order = 17
 images = Array[String](["ultra-rising-01.png", "ultra-rising-02.png", "ultra-rising-03.png"])
 short_description = "projects.ultra-rising.short-desc"
 long_description = "projects.ultra-rising.long-desc"
+video = "lEos3i5SvlI"
+video_thumbnail = "ultra-rising-vid.png"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

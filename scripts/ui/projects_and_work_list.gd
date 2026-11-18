@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends VBoxContainer
 
 
 @onready var work_list: BoxContainer = %WorkList
@@ -6,6 +6,8 @@ extends HBoxContainer
 
 
 func _ready() -> void:
+	work_list.vertical = Root.mobile
+
 	var project_list: Array[Project] = []
 	_explore_projects_in("res://data/projects", project_list)
 

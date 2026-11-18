@@ -14,5 +14,6 @@ order = 50
 images = Array[String](["fps-proto-01.png", "fps-proto-02.png", "fps-proto-03.png"])
 short_description = "projects.fps-proto.short-desc"
 long_description = "projects.fps-proto.long-desc"
-video = "A7aBjONVxAA"
+video = "tpUvF0o35QY"
+video_thumbnail = "fps-proto-03.png"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

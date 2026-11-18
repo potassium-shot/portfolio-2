@@ -5,7 +5,8 @@ class_name Web extends Node
 
 
 func show_video(video_id: String) -> void:
-    if not OS.has_feature("web"):
+    if not OS.has_feature("web") or Root.mobile:
+        OS.shell_open("https://youtu.be/%s" % video_id)
         return
 
     iframe_cover.visible = true

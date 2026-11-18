@@ -2,28 +2,70 @@
 
 [ext_resource type="LabelSettings" uid="uid://b6iiw1dikh1at" path="res://resources/label_settings/subtitle.tres" id="1_7ta2g"]
 [ext_resource type="Script" uid="uid://b0oqytdvus4iu" path="res://scripts/ui/project_card.gd" id="1_w8gbd"]
+[ext_resource type="LabelSettings" uid="uid://clees60u27p6e" path="res://resources/label_settings/normal.tres" id="3_0xvxv"]
 
-[node name="ProjectCard" type="VBoxContainer" unique_id=330400715]
-mouse_filter = 0
+[node name="ProjectCard" type="PanelContainer" unique_id=28696890]
+propagate_maximum_size = false
+offset_right = 170.0
+offset_bottom = 346.0
 mouse_default_cursor_shape = 2
+theme_type_variation = &"FramedPanelContainer"
 script = ExtResource("1_w8gbd")
 
-[node name="Title" type="Label" parent="." unique_id=481851570]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=283026299]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = -45
+theme_override_constants/margin_top = -25
+theme_override_constants/margin_right = -45
+theme_override_constants/margin_bottom = -45
+
+[node name="Background" type="ColorRect" parent="MarginContainer" unique_id=1003639446]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.5950145, 1.4860457, 0.9662776, 0.14509805)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=330400715]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="HBoxContainer" unique_id=481851570]
 unique_name_in_owner = true
 layout_mode = 2
 text = "project title"
 label_settings = ExtResource("1_7ta2g")
 horizontal_alignment = 1
 
-[node name="TagList" type="HFlowContainer" parent="." unique_id=2033054079]
+[node name="Desc" type="Label" parent="HBoxContainer" unique_id=1361091206]
+unique_name_in_owner = true
+layout_mode = 2
+text = "project desc"
+label_settings = ExtResource("3_0xvxv")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TagList" type="HFlowContainer" parent="HBoxContainer" unique_id=2033054079]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="ImageList" type="HBoxContainer" parent="." unique_id=70807886]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=1585067266]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+mouse_filter = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="ImageList" type="BoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=325440039]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 alignment = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="HBoxContainer/ScrollContainer" to="." method="_on_scroll_container_resized"]
+[connection signal="resized" from="HBoxContainer/ScrollContainer/ImageList" to="." method="_on_image_list_resized"]

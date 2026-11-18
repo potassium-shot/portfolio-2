@@ -32,14 +32,15 @@ colors = PackedColorArray(0, 0, 0, 1, 0.39308554, 0.3930855, 0.39308548, 1, 0, 0
 shader = ExtResource("4_sqa0i")
 shader_parameter/bloom_radius = 3.0
 shader_parameter/bloom_intensity = 0.7
-shader_parameter/crt_diff = 0.5
+shader_parameter/crt_diff = 0.35
 shader_parameter/crt_scroll_speed = 1.0
 shader_parameter/crt_blink_speed = 6.0
 shader_parameter/crt_blink_min_brightness = 0.85
 
-[node name="Root" type="Node" unique_id=1040543170 node_paths=PackedStringArray("bg_particle_emitters")]
+[node name="Root" type="Node" unique_id=1040543170 node_paths=PackedStringArray("bg_particle_emitters", "disable_on_mobile")]
 script = ExtResource("1_dylgi")
 bg_particle_emitters = [NodePath("Bg/BackgroundParticles1"), NodePath("Bg/BackgroundParticles2"), NodePath("Bg/BackgroundParticles3")]
+disable_on_mobile = [NodePath("UI/UIContents/MarginContainer/HBoxContainer/RunesLeft"), NodePath("UI/UIContents/MarginContainer/HBoxContainer/RunesRight")]
 
 [node name="Bg" type="Node2D" parent="." unique_id=56993605]
 
@@ -160,6 +161,7 @@ unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
+horizontal_scroll_mode = 0
 
 [node name="MainPage" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1698786797 instance=ExtResource("8_y3xxt")]
 unique_name_in_owner = true
@@ -273,4 +275,5 @@ script = ExtResource("14_vgks2")
 iframe_cover = NodePath("../UI/UIContents/IFrameCover")
 metadata/_custom_type_script = "uid://dry6f0ti3jhqu"
 
+[connection signal="gui_input" from="UI" to="." method="_on_ui_gui_input"]
 [connection signal="pressed" from="UI/UIContents/IFrameCover/MarginContainer/VBoxContainer/BackButton" to="Web" method="hide_video"]

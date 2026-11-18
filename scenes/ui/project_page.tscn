@@ -3,6 +3,20 @@
 [ext_resource type="LabelSettings" uid="uid://b88almklox5w" path="res://resources/label_settings/title.tres" id="1_pr8sr"]
 [ext_resource type="Script" uid="uid://1iffwe7mw238" path="res://scripts/ui/project_page.gd" id="1_rtky1"]
 [ext_resource type="PackedScene" uid="uid://dlcdletcuixuy" path="res://scenes/ui/separator_v.tscn" id="3_pta3j"]
+[ext_resource type="Shader" uid="uid://bki83ockynk30" path="res://shaders/rune-wall.gdshader" id="4_q8n37"]
+[ext_resource type="Texture2D" uid="uid://704wcl14uinu" path="res://textures/rune-wall.png" id="5_0tfnr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07ksk"]
+shader = ExtResource("4_q8n37")
+shader_parameter/runes = ExtResource("5_0tfnr")
+shader_parameter/screen_space = false
+shader_parameter/offset = Vector2(-0.004, 0)
+shader_parameter/size = Vector2(12, 4)
+shader_parameter/runes_color = Color(1, 1, 1, 1)
+shader_parameter/background_color = Color(1, 1, 1, 0.03529412)
+shader_parameter/scale = 0.004
+shader_parameter/movement = Vector2(0, -0.05)
+shader_parameter/lod = 2.5
 
 [node name="ProjectPage" type="VBoxContainer" unique_id=773839621]
 anchors_preset = 10
@@ -21,8 +35,12 @@ horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="." unique_id=299693337]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_type_variation = &"CancelButton"
 text = "Back"
+
+[node name="Spacer" type="Control" parent="." unique_id=2075861252]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=127046539]
 layout_mode = 2
@@ -38,6 +56,7 @@ custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 
 [node name="SeparatorV" parent="HBoxContainer" unique_id=1119732745 instance=ExtResource("3_pta3j")]
+material = SubResource("ShaderMaterial_07ksk")
 layout_mode = 2
 
 [node name="Spacer2" type="Control" parent="HBoxContainer" unique_id=760326286]
@@ -49,17 +68,33 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.7
 
-[node name="LongDescription" type="RichTextLabel" parent="HBoxContainer/Contents" unique_id=345474365]
-unique_name_in_owner = true
-layout_mode = 2
-focus_mode = 2
-bbcode_enabled = true
-fit_content = true
-selection_enabled = true
-
 [node name="Videos" type="VBoxContainer" parent="HBoxContainer/Contents" unique_id=2049920623]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
+[node name="LongDescription" type="RichTextLabel" parent="HBoxContainer/Contents" unique_id=345474365]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 2
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+bbcode_enabled = true
+fit_content = true
+selection_enabled = true
+
+[node name="Spacer2" type="Control" parent="." unique_id=449646459]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="BackButton2" type="Button" parent="." unique_id=1110723023]
+layout_mode = 2
+theme_type_variation = &"CancelButton"
+text = "Back"
+
 [connection signal="pressed" from="BackButton" to="." method="_go_back"]
+[connection signal="meta_clicked" from="HBoxContainer/Contents/LongDescription" to="." method="_on_long_description_meta_clicked"]
+[connection signal="pressed" from="BackButton2" to="." method="_go_back"]

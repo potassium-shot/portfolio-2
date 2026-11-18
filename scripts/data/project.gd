@@ -15,3 +15,5 @@ enum ProjectType {
 @export var short_description: String
 @export var long_description: String
 @export var video: String = ""
+@export var video_thumbnail: String = ""
+@export var bottom_back_visible: bool = true

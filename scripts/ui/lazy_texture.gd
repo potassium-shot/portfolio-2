@@ -8,9 +8,10 @@ const DEFAULT_ALPHA: float = 0.7
 const TWEEN_SPEED: float = 0.15
 
 
-var path: String
+@export var path: String
 
 @export var thumbnail: bool = true
+@export var reduce_fx: bool = true
 
 var _topmost_texture: TextureRect = null
 var _tween: Tween = null
@@ -33,7 +34,8 @@ func _enter_tree() -> void:
 	_topmost_texture.z_index = 500
 	_topmost_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_topmost_texture.self_modulate.a = DEFAULT_ALPHA
-	add_child(_topmost_texture)
+	_topmost_texture.visible = reduce_fx
+	add_child(_topmost_texture, false, INTERNAL_MODE_FRONT)
 
 	mouse_entered.connect(_mouse_entered)
 	mouse_exited.connect(_mouse_exited)
