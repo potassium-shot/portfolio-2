@@ -1,7 +1,14 @@
 class_name ProjectPage extends VBoxContainer
 
 
+@export var to_hide_when_no_link: Array[Control]
+
+
+var focus_on_back: Control = null
+
+
 @onready var title_label: Label = %TitleLabel
+@onready var link_button: Button = %LinkButton
 @onready var galery: BoxContainer = %Galery
 @onready var long_description: RichTextLabel = %LongDescription
 @onready var videos: BoxContainer = %Videos
@@ -10,11 +17,22 @@ class_name ProjectPage extends VBoxContainer
 
 var _tween: Tween = null
 var _switch_tween: Tween = null
+var _link: String
 
 
 func set_project(project: Project, switch: bool = false) -> void:
 	title_label.text = project.project_name
 	long_description.text = project.long_description
+
+	if project.link.is_empty():
+		for to_hide in to_hide_when_no_link:
+			to_hide.visible = false
+	else:
+		for to_hide in to_hide_when_no_link:
+			to_hide.visible = true
+
+		link_button.text = project.link_name
+		_link = project.link
 
 	if !switch:
 		modulate.a = 1.0
@@ -53,7 +71,7 @@ func clear() -> void:
 
 
 func _go_back() -> void:
-	Root.set_viewed_project(null)
+	Root.set_viewed_project(null, focus_on_back)
 
 
 func _on_long_description_meta_clicked(meta: Variant) -> void:
@@ -68,3 +86,7 @@ func _on_long_description_meta_clicked(meta: Variant) -> void:
 		_switch_tween.tween_callback(clear)
 		_switch_tween.tween_callback(set_project.bind(true).bind(load(json["project"])))
 		_switch_tween.tween_property(self, "modulate:a", 1.0, 0.3)
+
+
+func _on_link_button_pressed() -> void:
+	OS.shell_open(_link)

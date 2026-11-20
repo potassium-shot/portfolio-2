@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://273hm5jmaku1" path="res://textures/arrow-right.svg" id="4_7rtxy"]
 [ext_resource type="Texture2D" uid="uid://do6iqrycrxv81" path="res://textures/arrow-left.svg" id="5_hofdy"]
 [ext_resource type="Texture2D" uid="uid://bsvq3pyudlodv" path="res://textures/frame.svg" id="6_7rtxy"]
-[ext_resource type="FontFile" uid="uid://ct48q3mt0s7r3" path="res://resources/fonts/DMSerifText-Regular.ttf" id="6_u427p"]
+[ext_resource type="FontVariation" uid="uid://cbwfv3n7b4vx4" path="res://resources/fonts/DMBold.tres" id="7_0ahyh"]
+[ext_resource type="FontFile" uid="uid://daoydlmmdqv0n" path="res://resources/fonts/VictorMonoNerdFontMono-Medium.ttf" id="7_hofdy"]
+[ext_resource type="FontVariation" uid="uid://c7xjnhllgdy6g" path="res://resources/fonts/DMBase.tres" id="9_0ahyh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ols5k"]
 content_margin_left = 10.0
@@ -100,6 +102,58 @@ content_margin_top = 5.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
 bg_color = Color(0.8011095, 0.07648694, 0.20877054, 0.7294118)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1.4860457, 1.4860457, 1.4860457, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgisk"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.98, 0.77910006, 0.1764, 0.7294118)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.4860457, 1.4860457, 1.4860457, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrxf3"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.98, 0.71213335, 0.1764, 0.7294118)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.4811577, 0.87688714, 0.27261657, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2e0dr"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.8, 0.452, 0.08000002, 0.7294118)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -233,7 +287,7 @@ corner_detail = 1
 [sub_resource type="ImageTexture" id="ImageTexture_ols5k"]
 
 [resource]
-default_font = ExtResource("6_u427p")
+default_font = ExtResource("9_0ahyh")
 Button/font_sizes/font_size = 22
 Button/styles/hover = SubResource("StyleBoxFlat_ols5k")
 Button/styles/normal = SubResource("StyleBoxFlat_45o0r")
@@ -243,6 +297,11 @@ CancelButton/colors/font_color = Color(0.94, 0.34169, 0.31019998, 1)
 CancelButton/styles/hover = SubResource("StyleBoxFlat_7rtxy")
 CancelButton/styles/normal = SubResource("StyleBoxFlat_u427p")
 CancelButton/styles/pressed = SubResource("StyleBoxFlat_hofdy")
+CustomLinkButton/base_type = &"Button"
+CustomLinkButton/colors/font_color = Color(1.4811577, 0.87688714, 0.27261657, 1)
+CustomLinkButton/styles/hover = SubResource("StyleBoxFlat_fgisk")
+CustomLinkButton/styles/normal = SubResource("StyleBoxFlat_rrxf3")
+CustomLinkButton/styles/pressed = SubResource("StyleBoxFlat_2e0dr")
 FoldableContainer/fonts/font = ExtResource("1_ols5k")
 FoldableContainer/icons/expanded_arrow = ExtResource("2_qjhx0")
 FoldableContainer/icons/expanded_arrow_mirrored = ExtResource("3_u427p")
@@ -260,6 +319,8 @@ HScrollBar/constants/padding_top = 4
 LinkButton/colors/font_pressed_color = Color(0.5914361, 1.4862548, 0.97919095, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2nojw")
 RichTextLabel/colors/selection_color = Color(0.39, 1, 0.6441667, 0.33333334)
+RichTextLabel/fonts/bold_font = ExtResource("7_0ahyh")
+RichTextLabel/fonts/mono_font = ExtResource("7_hofdy")
 ScrollBar/styles/grabber = SubResource("StyleBoxFlat_x127s")
 ScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_tieq2")
 ScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_bjb6u")

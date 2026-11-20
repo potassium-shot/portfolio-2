@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://cbwfv3n7b4vx4"]
+
+[ext_resource type="FontFile" uid="uid://ct48q3mt0s7r3" path="res://resources/fonts/DMSerifText-Regular.ttf" id="1_wmiod"]
+
+[resource]
+base_font = ExtResource("1_wmiod")
+variation_embolden = 0.5

@@ -1,13 +1,48 @@
 ﻿keys,en_US,fr_FR
 main.title,Potassium Shot,Potassium Shot
 main.subtitle,Projects,Projets
-main.welcome-message,"Hello, my name is Toni Zana, I make games, engines and little programs as both a hobby and a job. With several projects on both itch.io and github [todo put a link], I am coming out of 5 years of studies at Isart Digital (as a gameplay programmer), as well as a 2 year apprenticeship at Dada! Animation [todo put a link again]. I like working in small teams, and what thrills me the most is working on programming architecture and complex systems.","Bonjour, je suis Toni Zana, je fais des jeux, des moteurs et des petits programmes, pour la passion et comme métier. Avec plusieurs projets à mon nom sur itch.io et github [todo mettre un lien]], je sors de 5 ans d'études à Isart Digital (en programmation gameplay), et de 2 ans d'alternance à Dada! Animation [todo mettre un lien encore]. J'aime travailler en petite équipe, et ce qui me passionne le plus c'est l'archicture de code ainsi que les systèmes complexes."
+main.cv-download,Download CV,Télécharger le CV
+main.welcome-message,"Hello, my name is Toni Zana, I make games, engines and little programs as both a hobby and a job. With several projects on both [url={""url"": ""https://itch.io/profile/potassium-shot""}]itch.io[/url] and [url={""url"": ""https://github.com/potassium-shot""}]github[/url], I am coming out of 5 years of studies at Isart Digital (as a gameplay programmer), as well as a 2 year apprenticeship at [url={""project"": ""uid://bc4mi6sb8bskl""}]Dada! Animation[/url]. I like working in small teams, and what thrills me the most is working on programming architecture and complex systems.","Bonjour, je suis Toni Zana, je fais des jeux, des moteurs et des petits programmes, pour la passion et comme métier. Avec plusieurs projets à mon nom sur itch.io et github [todo mettre un lien]], je sors de 5 ans d'études à Isart Digital (en programmation gameplay), et de 2 ans d'alternance à Dada! Animation [todo mettre un lien encore]. J'aime travailler en petite équipe, et ce qui me passionne le plus c'est l'archicture de code ainsi que les systèmes complexes."
 main.work.title,Experience,Experience
 main.projects.title,Projects,Projets
 main.tag-selector.title,Open Tag Filters,Filtrer les Tags
+link.official-site,Website,Site Web
 tags.solo.name,Solo,Solo
 tags.small-team.name,2-5 People,2-5 Personnes
 tags.large-team.name,>5 People,>5 Personnes
+projects.adhd-materia.short-desc,Python-scriptable over-engineered task manager,Gestionnaire de tâches scriptable en python
+projects.adhd-materia.long-desc,"This software made in Rust (with the egui GUI library) allows managing tasks, in a rather over-ingeneered way. I made it for fun in the span of 2 weeks.
+
+[b]Features[/b]:
+[ul]
+Tasks with name and description
+Task tags which can contain python-readable values
+Tasks within tasks
+Auto-scheduling and repeating tasks
+Custom python filters and sorting methods based on tags and their values
+[/ul]
+
+Tags can contain values like strings, numbers, dates, lists, string-keyed dictionaries, other tags, and references to tasks. Python scripts to filter and sort tasks can access these tags. One of the default tags is [code]priority(<string>)[/code], which supports setting priorities like A, B, C-, S++, etc.
+Tasks within tasks are actually implemented using tags. A [code]subtask-of(<task-id>)[/code] tag is inserted into subtasks, pointing to the parent task. The default python filter only shows them when looking inside the parent task. These is indeed very over-ingeneered and wasn't necessarily done out of efficiency, but it was enjoyable to make and that was the goal. Plus, the software did end-up being useful to me during my [url={""project"": ""uid://bc4mi6sb8bskl""}]apprenticeship at Dada! Animation[/url].
+
+For python, I made C bindings to pocketpy, a tiny python interpreter with most basic python features implemented, but without the bulk of embedding the entire c-python interpreter.","Ce logiciel est fait en Rust (avec la library d'ui [code]egui[/code]). Il permet de gêrer ses tâches, de manière légèrement over-egineered. Je l'ai fait pour m'amuser sur une période de 2 semaines.
+
+[b]Fonctionalités[/b]:
+[ul]
+Tâches avec un nom et une description
+Système de tags qui peuvent contenir des valeurs lisible depuis Python
+Des  sous-tâches dans les tâches
+Tâches répétées automatiques
+Filtres et tri personalisé avec Python, basé sur les tags des tâches, et leurs valeurs
+[/ul]
+
+Les tags peuvent contenir des valeurs comme du texte, des nombres, des dates du calendrier, des listes, des dictionaires à clés nommées, d'autres tags, et des références à d'autre tâches.
+L'utilisateur peut créer des petits scripts python de filtre ou de tri des tâches, qui peuvent accéder à ces tags. Par exemle, un des tags par défaut est [code]priority(<string>)[/code], qui peut contenir une prioritée comme A, B, C-, S++, etc.
+
+Les sous-tâches dans les tâches sont implémentées à l'aide des tags. Un tag [code]subtask-of(<task-id>)[/code] est inséré automatiquement dans les sous-tâches, contenant une référence vers la tâche parente. Le filtre python par défaut ne les affiche qu'à l'intérieur de la tâche parente.
+C'est un système assez over-ingeneered, que je n'ai pas fait dans le but d'être nécessairement le plus efficace, mais c'était aggréable à créer, ce qui était le but. Le logiciel à fini par m'être assez utile lors de mon alternance à [url={""project"": ""uid://bc4mi6sb8bskl""}]Dada! Animation[/url].
+
+Pour Python, j'ai fait des bindings C à pocketpy, un micro interprèteur Python avec la plupart des fonctionalités basique de Python, mais sans la lourdeur d'intégrer l'entièreté de l'inteprèteur C-Python."
 projects.dada.name,Tool Developer at Dada! Animation,Développeur Outils à Dada! Animation
 projects.dada.short-desc,"Tool developer, company's pipeline integration inside Unity and Unreal + outside tools.","Développeur outils, intégration de la pipeline de l'entreprise dans Unity, Unreal + des outils externes."
 projects.dada.long-desc,"Dada! Animation is an animation studio. I worked there as tool developer, initially making automation on Unity: automatic creation of shot scenes, shortcuts to setup all the standard scene structures of the company.
@@ -28,7 +63,7 @@ Il y avait déjà des outils de l'entreprise dans Unity lorsque je suis arrivé,
 
 J'ai aussi eu l'occasion de créer de petits outils externes en Rust, comme un outil pour automatiquement mettre à jour plusieurs projets Unity, ou.... interrompre des instances d'Unity planté.... ce qui fut utile de nombreuse foi, haha."
 projects.dialog-tool.name,Dialog Tool for Unreal,Éditeur de Dialogue pour Unreal
-projects.dialog-tool.short-desc,A tool made in Godot to visually create dialogs in an Unreal Engine project.,Un outil fait sur Godot pour créer visuellement des dialogues pour un projet Unreal Engine.
+projects.dialog-tool.short-desc,A tool made in Godot to visually create dialogs for an Unreal Engine project.,Un outil fait sur Godot pour créer visuellement des dialogues pour un projet Unreal Engine.
 projects.dialog-tool.long-desc,"[b]Editor tools[/b] to edit the dialogs of an RPG school project, [url={""project"": ""uid://cob6f6sh4070u""}]Kokopelli[/url]. Used by the Game Designers.
 
 This tool allows for the creation of [b]complex dialog[/b] for an RPG project at Isart. It was made under Godot, and exports to Unreal. It is able to create complex looping dialog, with multiple characters, [b]triggering events[/b] from within the dialog, applying [wave]special effects to the text[/wave] easily, all within an interface that contains all the tools usually expected of a tool, like [b]undo/redo, searching text, recent files[/b], etc.
@@ -95,6 +130,12 @@ Le problème, c'est que les combats sont très difficile, et quasiment impossibl
 [font_size=30]Mon Rôle[/font_size]
 
 Je me suis occupé du système de dialogue, comme mentionné sur [url={""project"": ""uid://p0e4721sun7c""}]la page du créateur de dialogues[/url]. J'ai aussi fait la [b]caméra[/b], avec quelques outils pour pouvoir la manipuler à travers le niveau. J'ai aussi créé le système d'inventaire. Et bien sûr, beaucoup, beaucoup de corrections de bug."
+projects.pfe.short-desc,"Car combat game, end-of-studies project","Jeu de combat de voitures, project de fin d'études"
+projects.pfe.long-desc,"Car combat game with a grappling hook, used to attack enemies by hooking to them and charging at them, and used for platforming.
+
+On this project, I was responsible for the architecture of the enemy cars AI, as well as player aim assist, the entire UI, and many shaders inside the game and on the UI.","Jeu de combat de voitures avec un grappin, utilisé pour attaquer les ennemis en s'y attachant pour les charger, et utilisé pour du platforming.
+
+Sur ce projet, j'étais responsable de la base architecturale de l'IA des voitures ennemies, de l'assistance à la visé du joueur, toute l'UI, et un bon nombre de shaders au sein du jeu et dans l'UI."
 projects.salty-ghosts.short-desc,Game jam game where your own projectiles hurt you.,Jeu de game jam où vos propres projectiles vous blessent.
 projects.salty-ghosts.long-desc,"[b]Salty Ghosts[/b] is a game made in 3 days by me, another gameplay programmer and an artist. It involves shooting ghost enemies with salt, but as you are a ghost too, the [b]salt you shoot can hurt you[/b].
 

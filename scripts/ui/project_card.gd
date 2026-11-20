@@ -52,14 +52,14 @@ func _exit_tree() -> void:
 
 func _tag_filter_changed(tags: Array[Tag]) -> void:
 	var included = tags.all(func(tag: Tag) -> bool: return tag in project.tags)
-	modulate.a = 1.0 if included else 0.15
+	modulate.a = 1.0 if included else 0.06
 
 
 func _on_gui_input(event: InputEvent) -> void:
 	var button_event := event as InputEventMouseButton
 
 	if button_event and button_event.button_index == MOUSE_BUTTON_LEFT:
-		Root.set_viewed_project(project)
+		Root.set_viewed_project(project, self)
 
 
 func _on_mouse_entered() -> void:
@@ -106,9 +106,11 @@ func _update_horizontal_scroll() -> void:
 	else:
 		scroll_container.size_flags_horizontal = SIZE_FILL
 		scroll_container.custom_minimum_size.x = 0.0
+		scroll_container.scroll_horizontal = 0
 
 		_autoscroll_tween = create_tween()
-		_autoscroll_tween.tween_property(scroll_container, "scroll_horizontal", image_list.size.x - scroll_container.size.x, 4.0)
+		var distance := image_list.size.x - scroll_container.size.x
+		_autoscroll_tween.tween_property(scroll_container, "scroll_horizontal", distance, distance / 90.0)
 		_autoscroll_tween.tween_interval(2.0)
 		_autoscroll_tween.tween_property(scroll_container, "scroll_horizontal", 0.0, 0.3)\
 			.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)

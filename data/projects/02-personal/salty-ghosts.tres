@@ -6,13 +6,17 @@
 [ext_resource type="Resource" uid="uid://bcw13uj7r5v08" path="res://data/tags/03-languages/csharp.tres" id="4_yu2ug"]
 [ext_resource type="Resource" uid="uid://cuv88d0cx3r6q" path="res://data/tags/04-other/game-jam.tres" id="5_a6lq2"]
 [ext_resource type="Resource" uid="uid://h5scbmrpe8th" path="res://data/tags/01-team/02-small-team.tres" id="6_yu2ug"]
+[ext_resource type="Resource" uid="uid://dwkg81iy5tr3h" path="res://data/tags/04-other/no-ai.tres" id="7_a6lq2"]
+[ext_resource type="Resource" uid="uid://b1pdaa8p3jwxv" path="res://data/tags/04-other/personal.tres" id="7_roluc"]
 
 [resource]
 script = ExtResource("1_5a28m")
 project_name = "Salty Ghosts"
-tags = Array[ExtResource("2_1j3mm")]([ExtResource("6_yu2ug"), ExtResource("3_o4ice"), ExtResource("4_yu2ug"), ExtResource("5_a6lq2")])
-order = 40
+tags = Array[ExtResource("2_1j3mm")]([ExtResource("6_yu2ug"), ExtResource("3_o4ice"), ExtResource("4_yu2ug"), ExtResource("5_a6lq2"), ExtResource("7_roluc"), ExtResource("7_a6lq2")])
+order = 20
 images = Array[String](["salty-ghosts-01.png", "salty-ghosts-02.png", "salty-ghosts-03.png"])
 short_description = "projects.salty-ghosts.short-desc"
 long_description = "projects.salty-ghosts.long-desc"
+link = "https://potassium-shot.itch.io/salty-ghosts"
+link_name = "Itch.io"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

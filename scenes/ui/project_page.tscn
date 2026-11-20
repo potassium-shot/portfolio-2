@@ -11,20 +11,21 @@ shader = ExtResource("4_q8n37")
 shader_parameter/runes = ExtResource("5_0tfnr")
 shader_parameter/screen_space = false
 shader_parameter/offset = Vector2(-0.004, 0)
-shader_parameter/size = Vector2(12, 4)
+shader_parameter/size = Vector2(12, 24)
 shader_parameter/runes_color = Color(1, 1, 1, 1)
 shader_parameter/background_color = Color(1, 1, 1, 0.03529412)
 shader_parameter/scale = 0.004
 shader_parameter/movement = Vector2(0, -0.05)
 shader_parameter/lod = 2.5
 
-[node name="ProjectPage" type="VBoxContainer" unique_id=773839621]
+[node name="ProjectPage" type="VBoxContainer" unique_id=773839621 node_paths=PackedStringArray("to_hide_when_no_link")]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 57.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 script = ExtResource("1_rtky1")
+to_hide_when_no_link = [NodePath("LinkButton"), NodePath("Spacer3")]
 
 [node name="TitleLabel" type="Label" parent="." unique_id=796645853]
 unique_name_in_owner = true
@@ -39,6 +40,16 @@ theme_type_variation = &"CancelButton"
 text = "Back"
 
 [node name="Spacer" type="Control" parent="." unique_id=2075861252]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="LinkButton" type="Button" parent="." unique_id=1575262995]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CustomLinkButton"
+text = "Link"
+
+[node name="Spacer3" type="Control" parent="." unique_id=877467941]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
@@ -73,6 +84,10 @@ unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
+[node name="Spacer2" type="Control" parent="HBoxContainer/Contents" unique_id=752160519]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
 [node name="LongDescription" type="RichTextLabel" parent="HBoxContainer/Contents" unique_id=345474365]
 unique_name_in_owner = true
 layout_mode = 2
@@ -92,9 +107,11 @@ layout_mode = 2
 
 [node name="BackButton2" type="Button" parent="." unique_id=1110723023]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_type_variation = &"CancelButton"
 text = "Back"
 
 [connection signal="pressed" from="BackButton" to="." method="_go_back"]
+[connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
 [connection signal="meta_clicked" from="HBoxContainer/Contents/LongDescription" to="." method="_on_long_description_meta_clicked"]
 [connection signal="pressed" from="BackButton2" to="." method="_go_back"]

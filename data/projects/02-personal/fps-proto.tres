@@ -5,12 +5,13 @@
 [ext_resource type="Resource" uid="uid://co1bqggjnwlo" path="res://data/tags/01-team/01-solo.tres" id="3_sn6ul"]
 [ext_resource type="Resource" uid="uid://q26t3ctfdl34" path="res://data/tags/02-engines/unity.tres" id="4_4ub1a"]
 [ext_resource type="Resource" uid="uid://bcw13uj7r5v08" path="res://data/tags/03-languages/csharp.tres" id="5_0exk0"]
+[ext_resource type="Resource" uid="uid://dwkg81iy5tr3h" path="res://data/tags/04-other/no-ai.tres" id="6_cp4fx"]
+[ext_resource type="Resource" uid="uid://b1pdaa8p3jwxv" path="res://data/tags/04-other/personal.tres" id="6_o3w7k"]
 
 [resource]
 script = ExtResource("1_unjl6")
 project_name = "projects.fps-proto.name"
-tags = Array[ExtResource("2_48kdd")]([ExtResource("3_sn6ul"), ExtResource("4_4ub1a"), ExtResource("5_0exk0")])
-order = 50
+tags = Array[ExtResource("2_48kdd")]([ExtResource("3_sn6ul"), ExtResource("4_4ub1a"), ExtResource("5_0exk0"), ExtResource("6_o3w7k"), ExtResource("6_cp4fx")])
 images = Array[String](["fps-proto-01.png", "fps-proto-02.png", "fps-proto-03.png"])
 short_description = "projects.fps-proto.short-desc"
 long_description = "projects.fps-proto.long-desc"

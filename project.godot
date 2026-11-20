@@ -45,7 +45,7 @@ folder_colors={
 
 common/auto_focus_strategy=1
 theme/custom="uid://bek62m4g8yboc"
-theme/custom_font="uid://ct48q3mt0s7r3"
+theme/custom_font="res://resources/fonts/DMBase.ttf"
 
 [input]
 

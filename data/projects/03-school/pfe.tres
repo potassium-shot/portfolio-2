@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Project" format=3 uid="uid://cpsfmsrws7mb6"]
+
+[ext_resource type="Script" uid="uid://bjrdlpk5no1ry" path="res://scripts/data/project.gd" id="1_j2x05"]
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="2_hk7jb"]
+[ext_resource type="Resource" uid="uid://dic3we41080m0" path="res://data/tags/02-engines/unreal.tres" id="3_4phut"]
+[ext_resource type="Resource" uid="uid://jotsx57mm6jv" path="res://data/tags/03-languages/cpp.tres" id="4_qkdrh"]
+[ext_resource type="Resource" uid="uid://c0tcnbc8gx8bn" path="res://data/tags/01-team/03-large-team.tres" id="5_r4x0v"]
+[ext_resource type="Resource" uid="uid://dwkg81iy5tr3h" path="res://data/tags/04-other/no-ai.tres" id="6_55pv1"]
+
+[resource]
+script = ExtResource("1_j2x05")
+project_name = "Coastal Drift"
+tags = Array[ExtResource("2_hk7jb")]([ExtResource("3_4phut"), ExtResource("4_qkdrh"), ExtResource("5_r4x0v"), ExtResource("6_55pv1")])
+order = 52
+images = Array[String](["pfe-01.png", "pfe-04.png", "pfe-03.png", "pfe-02.png"])
+short_description = "projects.pfe.short-desc"
+long_description = "projects.pfe.long-desc"
+video = "Nmo9bFTG06c"
+video_thumbnail = "pfe-vid.png"
+metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

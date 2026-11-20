@@ -30,8 +30,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0.39308554, 0.3930855, 0.39308548, 1, 0, 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lrqlo"]
 shader = ExtResource("4_sqa0i")
-shader_parameter/bloom_radius = 3.0
-shader_parameter/bloom_intensity = 0.7
+shader_parameter/bloom_radius = 2.5
+shader_parameter/bloom_intensity = 0.65
 shader_parameter/crt_diff = 0.35
 shader_parameter/crt_scroll_speed = 1.0
 shader_parameter/crt_blink_speed = 6.0

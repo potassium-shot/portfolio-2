@@ -39,3 +39,18 @@ func show_video(video_id: String) -> void:
 func hide_video():
     JavaScriptBridge.eval("document.getElementById('yt_overlay')?.remove();")
     iframe_cover.visible = false
+
+
+func get_url_project() -> String:
+    if OS.has_feature('web'):
+        var ret = JavaScriptBridge.eval('''
+			let params = new URL(document.location).searchParams;
+			params.get("project");
+		''')
+
+        if ret:
+            return ret
+        else:
+            return ""
+    else:
+        return ""

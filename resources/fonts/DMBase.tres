@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://c7xjnhllgdy6g"]
+
+[ext_resource type="FontFile" uid="uid://ct48q3mt0s7r3" path="res://resources/fonts/DMSerifText-Regular.ttf" id="1_syhta"]
+
+[resource]
+base_font = ExtResource("1_syhta")
+variation_embolden = -0.2

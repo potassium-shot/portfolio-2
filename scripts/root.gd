@@ -57,11 +57,11 @@ static func print_many(params: Array) -> void:
 	instance.debug_console.ensure_control_visible(label)
 
 
-static func set_viewed_project(project: Project) -> void:
-	instance._set_viewed_project(project)
+static func set_viewed_project(project: Project, focus_on_back: Control = null) -> void:
+	instance._set_viewed_project(project, focus_on_back)
 
 
-func _set_viewed_project(project: Project) -> void:
+func _set_viewed_project(project: Project, focus_on_back: Control) -> void:
 	if project == _currently_viewed_project:
 		return
 
@@ -78,6 +78,7 @@ func _set_viewed_project(project: Project) -> void:
 	if project:
 		from = main_page
 		to = project_page
+		project_page.focus_on_back = focus_on_back
 	else:
 		from = project_page
 		to = main_page
@@ -86,12 +87,14 @@ func _set_viewed_project(project: Project) -> void:
 	_tween.tween_property(from, "modulate:a", 0.0, 0.3)
 	_tween.tween_callback(
 		func():
-			scroll_container.scroll_vertical = 0
-
 			if project:
+				scroll_container.scroll_vertical = 0
 				project_page.set_project(project)
 			else:
 				main_page.show_page()
+
+				if focus_on_back:
+					scroll_container.ensure_control_visible(focus_on_back)
 	)
 	_tween.tween_property(to, "modulate:a", 1.0, 0.3)
 	await _tween.finished
@@ -109,6 +112,11 @@ func _ready() -> void:
 
 	contents.resized.connect(_resized)
 	_resized()
+
+	var project = web.get_url_project()
+
+	if !project.is_empty():
+		set_viewed_project(load("uid://%s" % project))
 
 
 func _resized() -> void:

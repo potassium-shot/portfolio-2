@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Project" format=3 uid="uid://n0bisnriq2du"]
+
+[ext_resource type="Script" uid="uid://bjrdlpk5no1ry" path="res://scripts/data/project.gd" id="1_lmsfi"]
+[ext_resource type="Script" uid="uid://7roht50hq4wl" path="res://scripts/data/tag.gd" id="2_en5xg"]
+[ext_resource type="Resource" uid="uid://besxl1vaaht84" path="res://data/tags/03-languages/rust.tres" id="3_22xij"]
+[ext_resource type="Resource" uid="uid://co1bqggjnwlo" path="res://data/tags/01-team/01-solo.tres" id="4_3veme"]
+[ext_resource type="Resource" uid="uid://b1pdaa8p3jwxv" path="res://data/tags/04-other/personal.tres" id="5_3veme"]
+[ext_resource type="Resource" uid="uid://dwkg81iy5tr3h" path="res://data/tags/04-other/no-ai.tres" id="5_6yvae"]
+
+[resource]
+script = ExtResource("1_lmsfi")
+project_name = "ADHD Materia"
+tags = Array[ExtResource("2_en5xg")]([ExtResource("3_22xij"), ExtResource("4_3veme"), ExtResource("5_3veme"), ExtResource("5_6yvae")])
+order = 33
+images = Array[String](["adhd-materia-01.png", "adhd-materia-02.png", "adhd-materia-03.png", "adhd-materia-04.png"])
+short_description = "projects.adhd-materia.short-desc"
+long_description = "projects.adhd-materia.long-desc"
+link = "https://github.com/potassium-shot/adhd-materia"
+link_name = "Github"
+metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

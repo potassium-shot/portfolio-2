@@ -5,13 +5,19 @@
 [ext_resource type="Resource" uid="uid://djponvxeccoy8" path="res://data/tags/02-engines/godot.tres" id="3_73s5f"]
 [ext_resource type="Resource" uid="uid://co1bqggjnwlo" path="res://data/tags/01-team/01-solo.tres" id="3_lkebk"]
 [ext_resource type="Resource" uid="uid://ci3ii0aopqahc" path="res://data/tags/03-languages/gdscript.tres" id="4_lkebk"]
+[ext_resource type="Resource" uid="uid://b1pdaa8p3jwxv" path="res://data/tags/04-other/personal.tres" id="6_3rtvk"]
+[ext_resource type="Resource" uid="uid://dwkg81iy5tr3h" path="res://data/tags/04-other/no-ai.tres" id="6_mgp8i"]
 
 [resource]
 script = ExtResource("1_d1g65")
 project_name = "Hyper Balls"
-tags = Array[ExtResource("2_u26lj")]([ExtResource("3_lkebk"), ExtResource("3_73s5f"), ExtResource("4_lkebk")])
+tags = Array[ExtResource("2_u26lj")]([ExtResource("3_lkebk"), ExtResource("3_73s5f"), ExtResource("4_lkebk"), ExtResource("6_3rtvk"), ExtResource("6_mgp8i")])
+order = 50
 images = Array[String](["hyper-balls-01.png", "hyper-balls-02.png", "hyper-balls-03.png"])
 short_description = "projects.hyper-balls.short-desc"
 long_description = "projects.hyper-balls.long-desc"
 video = "8-QjwJU2bVs?t=76"
+video_thumbnail = "hyper-balls-02.png"
+link = "https://potassium-shot.itch.io/hyper-balls"
+link_name = "Itch.io"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"

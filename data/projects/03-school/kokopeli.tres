@@ -5,15 +5,18 @@
 [ext_resource type="Resource" uid="uid://c0tcnbc8gx8bn" path="res://data/tags/01-team/03-large-team.tres" id="3_7nxh0"]
 [ext_resource type="Resource" uid="uid://jotsx57mm6jv" path="res://data/tags/03-languages/cpp.tres" id="5_tp0pg"]
 [ext_resource type="Resource" uid="uid://dic3we41080m0" path="res://data/tags/02-engines/unreal.tres" id="6_nqaup"]
+[ext_resource type="Resource" uid="uid://dwkg81iy5tr3h" path="res://data/tags/04-other/no-ai.tres" id="6_tp0pg"]
 
 [resource]
 script = ExtResource("1_wf4yb")
 project_name = "Kokopeli"
-tags = Array[ExtResource("2_8j3av")]([ExtResource("3_7nxh0"), ExtResource("6_nqaup"), ExtResource("5_tp0pg")])
-order = 31
+tags = Array[ExtResource("2_8j3av")]([ExtResource("3_7nxh0"), ExtResource("6_nqaup"), ExtResource("5_tp0pg"), ExtResource("6_tp0pg")])
+order = 33
 images = Array[String](["kokopeli-01.png", "kokopeli-02.png", "kokopeli-03.png"])
 short_description = "projects.kokopeli.short-desc"
 long_description = "projects.kokopeli.long-desc"
 video = "N8xxRe0KpiQ"
 video_thumbnail = "kokopeli-03.png"
+link = "https://jaythil.itch.io/kokopelli"
+link_name = "Itch.io"
 metadata/_custom_type_script = "uid://bjrdlpk5no1ry"
