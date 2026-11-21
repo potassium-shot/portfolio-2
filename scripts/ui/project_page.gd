@@ -9,6 +9,7 @@ var focus_on_back: Control = null
 
 @onready var title_label: Label = %TitleLabel
 @onready var link_button: Button = %LinkButton
+@onready var box_container: BoxContainer = %BoxContainer
 @onready var galery: BoxContainer = %Galery
 @onready var long_description: RichTextLabel = %LongDescription
 @onready var videos: BoxContainer = %Videos
@@ -18,6 +19,15 @@ var focus_on_back: Control = null
 var _tween: Tween = null
 var _switch_tween: Tween = null
 var _link: String
+
+
+func _ready() -> void:
+	if Root.mobile:
+		box_container.vertical = true
+		box_container.reverse_sort = true
+		var sep := %SeparatorV
+		sep.replace_by(preload("res://scenes/ui/separator_h.tscn").instantiate())
+		sep.free()
 
 
 func set_project(project: Project, switch: bool = false) -> void:

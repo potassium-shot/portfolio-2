@@ -14,6 +14,12 @@ static var mobile: bool:
 @export var bg_particle_emitters: Array[CPUParticles2D]
 @export var disable_on_mobile: Array[Control]
 
+@export var scroll_inertia_min: float = 10.0
+@export var scroll_inertia_mult: float = 75.0
+@export var scroll_inertia_decel: float = 2.0
+@export var scroll_inertia_decel_big_threshold: float = 600.0
+@export var scroll_inertia_decel_big: float = 8.0
+
 
 @onready var contents: Control = $UI/UIContents
 @onready var cursor: Cursor = $UI/Cursor
@@ -87,6 +93,8 @@ func _set_viewed_project(project: Project, focus_on_back: Control) -> void:
 	_tween.tween_property(from, "modulate:a", 0.0, 0.3)
 	_tween.tween_callback(
 		func():
+			_scroll_inertia = 0.0
+
 			if project:
 				scroll_container.scroll_vertical = 0
 				project_page.set_project(project)
@@ -145,3 +153,44 @@ func _on_ui_gui_input(event: InputEvent) -> void:
 			scroll_container.scroll_vertical += 116
 		elif mouse_event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			scroll_container.scroll_vertical -= 116
+
+
+#region Mobile Scroll
+
+
+var _pressed: bool = false
+var _last_scroll: float = 0.0
+var _scroll_inertia: float = 0.0
+
+
+func _input(event: InputEvent) -> void:
+	if !mobile:
+		return
+
+	var mouse_event := event as InputEventMouseButton
+
+	if mouse_event and mouse_event.button_index == MOUSE_BUTTON_LEFT:
+		_pressed = mouse_event.pressed
+
+		if mouse_event.is_released() and abs(_last_scroll) > scroll_inertia_min:
+			_scroll_inertia = _last_scroll * scroll_inertia_mult
+		else:
+			_scroll_inertia = 0.0
+	else:
+		var motion_event := event as InputEventMouseMotion
+
+		if motion_event and _pressed:
+			_last_scroll = motion_event.relative.y
+			scroll_container.scroll_vertical -= roundi(_last_scroll)
+
+
+func _process(delta: float) -> void:
+	if abs(_scroll_inertia) > 0.001:
+		scroll_container.scroll_vertical -= roundi(_scroll_inertia * delta)
+		_scroll_inertia *= max(
+			0.0,
+			1.0 - (scroll_inertia_decel_big if abs(_scroll_inertia) < scroll_inertia_decel_big_threshold else scroll_inertia_decel) * delta
+		)
+
+
+#endregion Mobile Scroll

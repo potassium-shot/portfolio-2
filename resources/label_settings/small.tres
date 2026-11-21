@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://gp7r8cpa6ho"]
+
+[ext_resource type="FontFile" uid="uid://ct48q3mt0s7r3" path="res://resources/fonts/DMSerifText-Regular.ttf" id="1_0mogb"]
+
+[resource]
+font = ExtResource("1_0mogb")
+font_color = Color(0.61745507, 0.61745465, 0.6174547, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.8156863)
+shadow_offset = Vector2(0, 0)

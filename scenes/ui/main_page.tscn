@@ -855,7 +855,7 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 mouse_behavior_recursive = 2
 script = ExtResource("1_aoism")
-disable_on_mobile = [NodePath("TitleCard/LineLeft"), NodePath("TitleCard/LineRight"), NodePath("ProjectsAndWorkList/HBoxContainer/LineLeft"), NodePath("ProjectsAndWorkList/HBoxContainer/LineRight"), NodePath("ProjectsAndWorkList/HBoxContainer2/LineLeft"), NodePath("ProjectsAndWorkList/HBoxContainer2/LineRight")]
+disable_on_mobile = [NodePath("TitleCard/LineLeft"), NodePath("TitleCard/LineRight"), NodePath("ProjectsAndWorkList/HBoxContainer/LineLeft"), NodePath("ProjectsAndWorkList/HBoxContainer/LineRight"), NodePath("ProjectsAndWorkList/HBoxContainer2/LineLeft"), NodePath("ProjectsAndWorkList/HBoxContainer2/LineRight"), NodePath("TagSelector"), NodePath("Spacer5")]
 
 [node name="TitleCard" type="HBoxContainer" parent="." unique_id=1846077692]
 layout_mode = 2

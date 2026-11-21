@@ -55,11 +55,18 @@ func _tag_filter_changed(tags: Array[Tag]) -> void:
 	modulate.a = 1.0 if included else 0.06
 
 
+var _pressed_coords: Vector2 = Vector2.ZERO
+
+
 func _on_gui_input(event: InputEvent) -> void:
 	var button_event := event as InputEventMouseButton
 
 	if button_event and button_event.button_index == MOUSE_BUTTON_LEFT:
-		Root.set_viewed_project(project, self)
+		if button_event.is_released():
+			if _pressed_coords.distance_squared_to(button_event.position) < 1.0 * 1.0:
+				Root.set_viewed_project(project, self)
+		else:
+			_pressed_coords = button_event.position
 
 
 func _on_mouse_entered() -> void:

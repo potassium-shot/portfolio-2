@@ -3,6 +3,7 @@
 [ext_resource type="LabelSettings" uid="uid://b6iiw1dikh1at" path="res://resources/label_settings/subtitle.tres" id="1_7ta2g"]
 [ext_resource type="Script" uid="uid://b0oqytdvus4iu" path="res://scripts/ui/project_card.gd" id="1_w8gbd"]
 [ext_resource type="LabelSettings" uid="uid://clees60u27p6e" path="res://resources/label_settings/normal.tres" id="3_0xvxv"]
+[ext_resource type="LabelSettings" uid="uid://gp7r8cpa6ho" path="res://resources/label_settings/small.tres" id="4_a1gwk"]
 
 [node name="ProjectCard" type="PanelContainer" unique_id=28696890]
 propagate_maximum_size = false
@@ -45,6 +46,13 @@ text = "project desc"
 label_settings = ExtResource("3_0xvxv")
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="ClickNotice" type="Label" parent="HBoxContainer" unique_id=1206186551]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Click for details"
+label_settings = ExtResource("4_a1gwk")
+horizontal_alignment = 1
 
 [node name="TagList" type="HFlowContainer" parent="HBoxContainer" unique_id=2033054079]
 unique_name_in_owner = true

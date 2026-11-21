@@ -41,6 +41,7 @@ shader_parameter/crt_blink_min_brightness = 0.85
 script = ExtResource("1_dylgi")
 bg_particle_emitters = [NodePath("Bg/BackgroundParticles1"), NodePath("Bg/BackgroundParticles2"), NodePath("Bg/BackgroundParticles3")]
 disable_on_mobile = [NodePath("UI/UIContents/MarginContainer/HBoxContainer/RunesLeft"), NodePath("UI/UIContents/MarginContainer/HBoxContainer/RunesRight")]
+scroll_inertia_decel_big_threshold = 1000.0
 
 [node name="Bg" type="Node2D" parent="." unique_id=56993605]
 

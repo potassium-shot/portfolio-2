@@ -1,7 +1,6 @@
 class_name MainPage extends VBoxContainer
 
 
-@export var margin_disable_on_mobile: MarginContainer
 @export var disable_on_mobile: Array[Control]
 
 
@@ -26,9 +25,6 @@ func _ready() -> void:
 	show_page()
 
 	if Root.mobile:
-		margin_disable_on_mobile.add_theme_constant_override("margin_left", 0)
-		margin_disable_on_mobile.add_theme_constant_override("margin_right", 0)
-
 		for disable in disable_on_mobile:
 			disable.visible = false
 

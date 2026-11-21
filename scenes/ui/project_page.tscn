@@ -33,6 +33,7 @@ layout_mode = 2
 text = "Project"
 label_settings = ExtResource("1_pr8sr")
 horizontal_alignment = 1
+clip_text = true
 
 [node name="BackButton" type="Button" parent="." unique_id=299693337]
 layout_mode = 2
@@ -53,42 +54,44 @@ text = "Link"
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=127046539]
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=313233140]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Galery" type="VBoxContainer" parent="HBoxContainer" unique_id=415671457]
+[node name="Galery" type="VBoxContainer" parent="BoxContainer" unique_id=415671457]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="Spacer" type="Control" parent="HBoxContainer" unique_id=1795599348]
-custom_minimum_size = Vector2(8, 0)
+[node name="Spacer" type="Control" parent="BoxContainer" unique_id=1795599348]
+custom_minimum_size = Vector2(8, 16)
 layout_mode = 2
 
-[node name="SeparatorV" parent="HBoxContainer" unique_id=1119732745 instance=ExtResource("3_pta3j")]
+[node name="SeparatorV" parent="BoxContainer" unique_id=1119732745 instance=ExtResource("3_pta3j")]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_07ksk")
 layout_mode = 2
 
-[node name="Spacer2" type="Control" parent="HBoxContainer" unique_id=760326286]
-custom_minimum_size = Vector2(8, 0)
+[node name="Spacer2" type="Control" parent="BoxContainer" unique_id=760326286]
+custom_minimum_size = Vector2(8, 16)
 layout_mode = 2
 
-[node name="Contents" type="VBoxContainer" parent="HBoxContainer" unique_id=1601715529]
+[node name="Contents" type="VBoxContainer" parent="BoxContainer" unique_id=1601715529]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.7
 
-[node name="Videos" type="VBoxContainer" parent="HBoxContainer/Contents" unique_id=2049920623]
+[node name="Videos" type="VBoxContainer" parent="BoxContainer/Contents" unique_id=2049920623]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="Spacer2" type="Control" parent="HBoxContainer/Contents" unique_id=752160519]
+[node name="Spacer2" type="Control" parent="BoxContainer/Contents" unique_id=752160519]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="LongDescription" type="RichTextLabel" parent="HBoxContainer/Contents" unique_id=345474365]
+[node name="LongDescription" type="RichTextLabel" parent="BoxContainer/Contents" unique_id=345474365]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 2
@@ -113,5 +116,5 @@ text = "Back"
 
 [connection signal="pressed" from="BackButton" to="." method="_go_back"]
 [connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
-[connection signal="meta_clicked" from="HBoxContainer/Contents/LongDescription" to="." method="_on_long_description_meta_clicked"]
+[connection signal="meta_clicked" from="BoxContainer/Contents/LongDescription" to="." method="_on_long_description_meta_clicked"]
 [connection signal="pressed" from="BackButton2" to="." method="_go_back"]

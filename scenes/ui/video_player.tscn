@@ -5,10 +5,9 @@
 
 [node name="VideoPlayer" type="TextureRect" unique_id=273357125]
 self_modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
-custom_minimum_size = Vector2(600, 400)
 custom_maximum_size = Vector2(-1, 550)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 505.0
+offset_bottom = 357.0
 expand_mode = 5
 stretch_mode = 5
 script = ExtResource("1_plvoq")
