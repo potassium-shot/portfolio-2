@@ -46,7 +46,7 @@ func _toggled(toggled_on: bool) -> void:
 
 
 func _update_tag() -> void:
-	for style in ["normal", "hover", "pressed"]:
+	for style in ["normal", "hover", "pressed", "disabled"]:
 		remove_theme_stylebox_override(style)
 		var box := get_theme_stylebox(style).duplicate() as StyleBoxFlat
 		box.border_color *= tag.color

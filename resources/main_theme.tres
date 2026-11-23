@@ -10,6 +10,23 @@
 [ext_resource type="FontFile" uid="uid://daoydlmmdqv0n" path="res://resources/fonts/VictorMonoNerdFontMono-Medium.ttf" id="7_hofdy"]
 [ext_resource type="FontVariation" uid="uid://c7xjnhllgdy6g" path="res://resources/fonts/DMBase.tres" id="9_0ahyh"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e2ta"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.4860457, 1.4860457, 1.4860457, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 3
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ols5k"]
 content_margin_left = 10.0
 content_margin_top = 5.0
@@ -288,7 +305,9 @@ corner_detail = 1
 
 [resource]
 default_font = ExtResource("9_0ahyh")
+Button/colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0.7882353)
 Button/font_sizes/font_size = 22
+Button/styles/disabled = SubResource("StyleBoxFlat_5e2ta")
 Button/styles/hover = SubResource("StyleBoxFlat_ols5k")
 Button/styles/normal = SubResource("StyleBoxFlat_45o0r")
 Button/styles/pressed = SubResource("StyleBoxFlat_biaja")

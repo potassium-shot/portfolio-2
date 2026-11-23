@@ -14,6 +14,7 @@ var focus_on_back: Control = null
 @onready var long_description: RichTextLabel = %LongDescription
 @onready var videos: BoxContainer = %Videos
 @onready var bottom_back: Button = $BackButton2
+@onready var tags_container: FlowContainer = %TagsContainer
 
 
 var _tween: Tween = null
@@ -47,6 +48,12 @@ func set_project(project: Project, switch: bool = false) -> void:
 	if !switch:
 		modulate.a = 1.0
 
+	for tag in project.tags:
+		var button := preload("res://scenes/ui/tag_button.tscn").instantiate() as TagButton
+		button.tag = tag
+		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		tags_container.add_child(button)
+
 	for image in project.images:
 		var t := LazyTexture.new()
 		t.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
@@ -73,6 +80,9 @@ func set_project(project: Project, switch: bool = false) -> void:
 
 
 func clear() -> void:
+	for child: Node in tags_container.get_children():
+		child.queue_free()
+
 	for child: Node in galery.get_children():
 		child.queue_free()
 

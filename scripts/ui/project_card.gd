@@ -28,6 +28,7 @@ func _ready() -> void:
 	for tag in project.tags:
 		var button := preload("res://scenes/ui/tag_button.tscn").instantiate() as TagButton
 		button.tag = tag
+		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		tag_list.add_child(button)
 
 	if project.images.is_empty():
