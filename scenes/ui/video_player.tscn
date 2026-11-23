@@ -12,6 +12,7 @@ expand_mode = 5
 stretch_mode = 5
 script = ExtResource("1_plvoq")
 reduce_fx = false
+magnifier = false
 metadata/_custom_type_script = "uid://dmulo5btt173l"
 
 [node name="Button" type="Button" parent="." unique_id=1211418170]

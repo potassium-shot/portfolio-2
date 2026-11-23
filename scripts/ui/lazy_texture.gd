@@ -12,8 +12,10 @@ const TWEEN_SPEED: float = 0.15
 
 @export var thumbnail: bool = true
 @export var reduce_fx: bool = true
+@export var magnifier: bool = true
 
 var _topmost_texture: TextureRect = null
+var _mag: Button = null
 var _tween: Tween = null
 var _cancel_token: Callable = func(): pass
 var _frame_requested: int = -2
@@ -36,6 +38,28 @@ func _enter_tree() -> void:
 	_topmost_texture.self_modulate.a = DEFAULT_ALPHA
 	_topmost_texture.visible = reduce_fx
 	add_child(_topmost_texture, false, INTERNAL_MODE_FRONT)
+
+	if magnifier:
+		_mag = Button.new()
+		_mag.anchor_bottom = 1.0
+		_mag.anchor_top = 1.0
+		_mag.anchor_left = 1.0
+		_mag.anchor_right = 1.0
+		_mag.offset_bottom = -16
+		_mag.offset_right = -16
+		_mag.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+		_mag.grow_vertical = Control.GROW_DIRECTION_BEGIN
+		_mag.z_index = 510
+		_mag.self_modulate.a = 0.0
+		_mag.theme_type_variation = &"ButtonSameMargins"
+		_mag.mouse_filter = Control.MOUSE_FILTER_PASS
+		_mag.icon = preload("res://textures/magnifier.svg")
+		_mag.pressed.connect(
+			func():
+				OS.shell_open("https://images.potassium-shot.eu/portfolio/%s" % path)
+				get_viewport().set_input_as_handled()
+		)
+		add_child(_mag, false, INTERNAL_MODE_FRONT)
 
 	mouse_entered.connect(_mouse_entered)
 	mouse_exited.connect(_mouse_exited)
@@ -92,8 +116,12 @@ func _mouse_entered() -> void:
 	if _tween and _tween.is_running():
 		_tween.kill()
 
-	_tween = create_tween()
+	_tween = create_tween().set_parallel()
 	_tween.tween_property(_topmost_texture, "self_modulate:a", 1.0, TWEEN_SPEED)
+
+	if _mag:
+		_tween.tween_property(_mag, "self_modulate:a", 1.0, TWEEN_SPEED)
+
 	Root.instance.cursor.topmost_counter += 1
 
 
@@ -101,8 +129,12 @@ func _mouse_exited() -> void:
 	if _tween and _tween.is_running():
 		_tween.kill()
 
-	_tween = create_tween()
+	_tween = create_tween().set_parallel()
 	_tween.tween_property(_topmost_texture, "self_modulate:a", DEFAULT_ALPHA, TWEEN_SPEED)
+
+	if _mag:
+		_tween.tween_property(_mag, "self_modulate:a", 0.0, TWEEN_SPEED)
+
 	Root.instance.cursor.topmost_counter -= 1
 
 

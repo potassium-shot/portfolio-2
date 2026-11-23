@@ -76,4 +76,6 @@ alignment = 1
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="resized" from="HBoxContainer/ScrollContainer" to="." method="_on_scroll_container_resized"]
+[connection signal="mouse_entered" from="HBoxContainer/ScrollContainer/ImageList" to="." method="_on_image_list_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/ScrollContainer/ImageList" to="." method="_on_image_list_mouse_exited"]
 [connection signal="resized" from="HBoxContainer/ScrollContainer/ImageList" to="." method="_on_image_list_resized"]

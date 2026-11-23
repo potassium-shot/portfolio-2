@@ -124,3 +124,13 @@ func _update_horizontal_scroll() -> void:
 			.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 		_autoscroll_tween.tween_interval(1.0)
 		_autoscroll_tween.set_loops()
+
+
+func _on_image_list_mouse_entered() -> void:
+	if _autoscroll_tween and _autoscroll_tween.is_running():
+		_autoscroll_tween.pause()
+
+
+func _on_image_list_mouse_exited() -> void:
+	if _autoscroll_tween and !_autoscroll_tween.is_running():
+		_autoscroll_tween.play()
