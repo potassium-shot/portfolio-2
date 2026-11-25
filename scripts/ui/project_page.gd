@@ -34,6 +34,7 @@ func _ready() -> void:
 func set_project(project: Project, switch: bool = false) -> void:
 	title_label.text = project.project_name
 	long_description.text = project.long_description
+	long_description.selection_enabled = !Root.mobile
 
 	if project.link.is_empty():
 		for to_hide in to_hide_when_no_link:
@@ -106,6 +107,8 @@ func _on_long_description_meta_clicked(meta: Variant) -> void:
 		_switch_tween.tween_callback(clear)
 		_switch_tween.tween_callback(set_project.bind(true).bind(load(json["project"])))
 		_switch_tween.tween_property(self, "modulate:a", 1.0, 0.3)
+	elif "url" in json:
+		OS.shell_open(json["url"])
 
 
 func _on_link_button_pressed() -> void:

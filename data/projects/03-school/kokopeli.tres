@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("1_wf4yb")
-project_name = "Kokopeli"
+project_name = "Kokopelli"
 tags = Array[ExtResource("2_8j3av")]([ExtResource("3_7nxh0"), ExtResource("6_nqaup"), ExtResource("5_tp0pg"), ExtResource("6_tp0pg")])
 order = 33
 images = Array[String](["kokopeli-01.png", "kokopeli-02.png", "kokopeli-03.png"])

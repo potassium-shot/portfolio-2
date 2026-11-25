@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Potassium Shot's Portfolio\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+msgid "main.back"
+msgstr ""
+
+msgid "main.click-here"
+msgstr ""
+
+msgid "main.title"
+msgstr ""
+
+msgid "main.subtitle"
+msgstr ""
+
+msgid "main.cv-download"
+msgstr ""
+
+msgid "main.welcome-message"
+msgstr ""
+
+msgid "main.tag-selector.title"
+msgstr ""
+
+msgid "link.official-site"
+msgstr ""
+
+msgid "tags.team-size"
+msgstr ""
+
+msgid "tags.solo.name"
+msgstr ""
+
+msgid "tags.small-team.name"
+msgstr ""
+
+msgid "tags.large-team.name"
+msgstr ""
+
+msgid "tags.engine"
+msgstr ""
+
+msgid "tags.languages"
+msgstr ""
+
+msgid "tags.other.name"
+msgstr ""
+
+msgid "tags.personal.name"
+msgstr ""
+
+msgid "tags.no-ai.name"
+msgstr ""
+
+msgid "main.work.title"
+msgstr ""
+
+msgid "main.projects.title"
+msgstr ""
+
+msgid "main.click-for-details"
+msgstr ""
+
+msgid "projects.adhd-materia.short-desc"
+msgstr ""
+
+msgid "projects.adhd-materia.long-desc"
+msgstr ""
+
+msgid "projects.dada.name"
+msgstr ""
+
+msgid "projects.dada.short-desc"
+msgstr ""
+
+msgid "projects.dada.long-desc"
+msgstr ""
+
+msgid "projects.dialog-tool.name"
+msgstr ""
+
+msgid "projects.dialog-tool.short-desc"
+msgstr ""
+
+msgid "projects.dialog-tool.long-desc"
+msgstr ""
+
+msgid "projects.fps-proto.name"
+msgstr ""
+
+msgid "projects.fps-proto.short-desc"
+msgstr ""
+
+msgid "projects.fps-proto.long-desc"
+msgstr ""
+
+msgid "projects.holodia.name"
+msgstr ""
+
+msgid "projects.holodia.short-desc"
+msgstr ""
+
+msgid "projects.holodia.long-desc"
+msgstr ""
+
+msgid "projects.hyper-balls.short-desc"
+msgstr ""
+
+msgid "projects.hyper-balls.long-desc"
+msgstr ""
+
+msgid "projects.kokopeli.short-desc"
+msgstr ""
+
+msgid "projects.kokopeli.long-desc"
+msgstr ""
+
+msgid "projects.pfe.short-desc"
+msgstr ""
+
+msgid "projects.pfe.long-desc"
+msgstr ""
+
+msgid "projects.salty-ghosts.short-desc"
+msgstr ""
+
+msgid "projects.salty-ghosts.long-desc"
+msgstr ""
+
+msgid "projects.ultra-rising.name"
+msgstr ""
+
+msgid "projects.ultra-rising.short-desc"
+msgstr ""
+
+msgid "projects.ultra-rising.long-desc"
+msgstr ""
+

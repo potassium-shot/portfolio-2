@@ -19,6 +19,7 @@ static var mobile: bool:
 @export var scroll_inertia_decel: float = 2.0
 @export var scroll_inertia_decel_big_threshold: float = 600.0
 @export var scroll_inertia_decel_big: float = 8.0
+@export var pc_scroll_lerp: float = 4.0
 
 
 @onready var contents: Control = $UI/UIContents
@@ -47,7 +48,10 @@ func _enter_tree() -> void:
 		for disable in disable_on_mobile:
 			disable.visible = false
 
-		get_window().content_scale_factor = 1.8
+		var screen_size := get_viewport().get_visible_rect().size
+		var aspect := screen_size.x / screen_size.y
+
+		get_window().content_scale_factor = 1.8 if aspect > 2.6 else 1.4
 
 
 static func print(...params: Array) -> void:
@@ -145,14 +149,23 @@ func _notification(what: int) -> void:
 				set_viewed_project(null)
 
 
+#region PC Scroll
+
+
+var _scroll_target: float = 0.0
+
+
 func _on_ui_gui_input(event: InputEvent) -> void:
 	var mouse_event := event as InputEventMouseButton
 
 	if mouse_event:
 		if mouse_event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			scroll_container.scroll_vertical += 116
+			_scroll_target += 80
 		elif mouse_event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			scroll_container.scroll_vertical -= 116
+			_scroll_target -= 80
+
+
+#endregion PC Scroll
 
 
 #region Mobile Scroll
@@ -181,16 +194,33 @@ func _input(event: InputEvent) -> void:
 
 		if motion_event and _pressed:
 			_last_scroll = motion_event.relative.y
-			scroll_container.scroll_vertical -= roundi(_last_scroll)
+			_scroll_target -= roundi(_last_scroll)
 
 
 func _process(delta: float) -> void:
 	if abs(_scroll_inertia) > 0.001:
-		scroll_container.scroll_vertical -= roundi(_scroll_inertia * delta)
+		_scroll_target -= _scroll_inertia * delta
 		_scroll_inertia *= max(
 			0.0,
 			1.0 - (scroll_inertia_decel_big if abs(_scroll_inertia) < scroll_inertia_decel_big_threshold else scroll_inertia_decel) * delta
 		)
+
+	var max_vert := 0.0
+
+	if main_page.visible:
+		max_vert += main_page.size.y
+
+	if project_page.visible:
+		max_vert += project_page.size.y
+
+	max_vert -= scroll_container.size.y
+
+	_scroll_target = clampf(_scroll_target, 0.0, max_vert)
+
+	scroll_container.scroll_vertical = roundi(
+		_scroll_target if mobile else
+		lerpf(scroll_container.scroll_vertical, _scroll_target, pc_scroll_lerp * delta)
+	)
 
 
 #endregion Mobile Scroll

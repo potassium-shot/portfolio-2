@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_8eat2")
-tag_name = "Personal"
+tag_name = "tags.personal.name"
 color = Color(0.34692955, 0.68835264, 0.93438065, 1)
 metadata/_custom_type_script = "uid://7roht50hq4wl"

@@ -38,7 +38,7 @@ clip_text = true
 [node name="BackButton" type="Button" parent="." unique_id=299693337]
 layout_mode = 2
 theme_type_variation = &"CancelButton"
-text = "Back"
+text = "main.back"
 
 [node name="Spacer" type="Control" parent="." unique_id=2075861252]
 custom_minimum_size = Vector2(0, 16)
@@ -121,7 +121,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"CancelButton"
-text = "Back"
+text = "main.back"
 
 [connection signal="pressed" from="BackButton" to="." method="_go_back"]
 [connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]

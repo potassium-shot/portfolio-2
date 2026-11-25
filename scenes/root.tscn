@@ -42,6 +42,7 @@ script = ExtResource("1_dylgi")
 bg_particle_emitters = [NodePath("Bg/BackgroundParticles1"), NodePath("Bg/BackgroundParticles2"), NodePath("Bg/BackgroundParticles3")]
 disable_on_mobile = [NodePath("UI/UIContents/MarginContainer/HBoxContainer/RunesLeft"), NodePath("UI/UIContents/MarginContainer/HBoxContainer/RunesRight")]
 scroll_inertia_decel_big_threshold = 1000.0
+pc_scroll_lerp = 12.0
 
 [node name="Bg" type="Node2D" parent="." unique_id=56993605]
 
@@ -162,6 +163,7 @@ unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 horizontal_scroll_mode = 0
 
 [node name="MainPage" parent="UI/UIContents/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1698786797 instance=ExtResource("8_y3xxt")]
